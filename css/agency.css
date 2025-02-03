@@ -9,6 +9,11 @@ body {
     font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.inline-block {
+  display: inline-block;
+  margin-right:15px;
+}
+
 p {
     line-height: 1.75;
     text-align: left;
