@@ -236,3 +236,8 @@ header.masthead .intro-text .intro-heading {
         background-color: #fed136;
     }
 }
+
+.navbar-logo {
+    max-height: 18px;
+    margin-top: -3px;
+}
