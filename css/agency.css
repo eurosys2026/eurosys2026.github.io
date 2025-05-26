@@ -241,3 +241,24 @@ header.masthead .intro-text .intro-heading {
     max-height: 18px;
     margin-top: -3px;
 }
+
+/* Add padding to sections on smaller screens */
+@media (max-width: 767px) {
+    section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header.masthead .intro-text {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Add padding to .container on smaller screens */
+@media (max-width: 767px) {
+    .container {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+}
