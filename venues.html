@@ -92,21 +92,71 @@
             <p>Please do take advantage of this opportunity to also explore beautiful <a href="https://edinburgh.org/">Edinburgh</a> and <a href="https://www.visitscotland.com/">Scotland</a>!</p> 
                 
             <!--<p>We have prepared a list of videos to give you a glimpse of the Scottish awesomeness! If you like the trailer, do plan to stay for an extra week after the conference to visit Scotland :-) </p> -->
-        <table border="0">
-        <tr>
-            <td><iframe width="280" height="158" src="https://www.youtube.com/embed/FlG6tbYaA88" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
-        </tr>
-            
-         <tr>
-            <th><iframe width="280" height="158" src="https://www.youtube.com/embed/GRhqRnj2sY0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
-        </tr>
-            
-        <tr>
-            <th><iframe width="280" height="158" src="https://www.youtube.com/embed/zhtg9XgVwuM" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
-        </tr>
-            
-            
-        </table> 
+        
+        <style>
+          .video-carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 840px; /* Increased max-width for a larger carousel */
+            margin: 20px auto; /* Keeps it centered with top/bottom margin */
+            overflow: hidden;
+          }
+
+          .video-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+
+          .video-slide {
+            min-width: 100%; /* Each slide takes full width of the container */
+            box-sizing: border-box;
+            text-align: center; /* Center the iframe within the slide */
+          }
+
+          .video-slide iframe {
+            max-width: 100%;
+            /* Default width and height, can be overridden by iframe attributes */
+            width: 840px; /* Increased width */
+            height: 472.5px; /* Increased height (maintaining 16:9 ratio for 840px width) */
+          }
+          
+          .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 24px;
+          }
+
+          .carousel-arrow.prev {
+            left: 10px;
+          }
+
+          .carousel-arrow.next {
+            right: 10px;
+          }
+        </style>
+
+        <div class="video-carousel-container">
+          <div class="video-carousel">
+            <div class="video-slide">
+              <iframe width="840" height="472.5" src="https://www.youtube.com/embed/FlG6tbYaA88" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-slide">
+              <iframe width="840" height="472.5" src="https://www.youtube.com/embed/GRhqRnj2sY0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-slide">
+              <iframe width="840" height="472.5" src="https://www.youtube.com/embed/zhtg9XgVwuM" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <button class="carousel-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="carousel-arrow next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
          
         </div>
       </div>
@@ -142,6 +192,34 @@
     $(function(){
       $("#nav-placeholder").load("nav.html");
     });
+  </script>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.video-slide');
+    const totalSlides = slides.length;
+    const carousel = document.querySelector('.video-carousel');
+
+    function showSlide(index) {
+      if (index >= totalSlides) {
+        currentSlideIndex = 0;
+      } else if (index < 0) {
+        currentSlideIndex = totalSlides - 1;
+      } else {
+        currentSlideIndex = index;
+      }
+      const offset = -currentSlideIndex * 100;
+      if (carousel) {
+        carousel.style.transform = `translateX(${offset}%)`;
+      }
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlideIndex + direction);
+    }
+
+    // Initialize carousel
+    showSlide(currentSlideIndex);
   </script>
 
 </body>
