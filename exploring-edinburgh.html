@@ -42,10 +42,102 @@
     </div>
   </header>
 
-  <!-- Registration -->
-  <section id="registration">
+  <!-- Exploring -->
+  <section id="exploring">
     <div class="container">
-TBD
+      <div class="row">
+        <div class="col-12 text-justify">
+          <h2 class="section-heading">Exploring Edinburgh &amp; Scotland</h2>
+
+          <p>Please do take advantage of this opportunity to also explore beautiful <a href="https://edinburgh.org/">Edinburgh</a> and <a href="https://www.visitscotland.com/">Scotland</a>!</p>
+
+          <p>We have prepared a selection of videos to give you a glimpse of the Scottish awesomeness. If you like the trailer, do plan to stay for an extra day or two after the conference to visit Scotland!</p>
+
+        <style>
+          .video-carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 840px;
+            margin: 20px auto;
+            overflow: hidden;
+          }
+
+          .video-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+
+          .video-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+          }
+
+          .video-slide iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+          }
+
+          .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 24px;
+          }
+
+          .carousel-arrow.prev {
+            left: 10px;
+          }
+
+          .carousel-arrow.next {
+            right: 10px;
+          }
+
+          @media (max-width: 768px) {
+            .carousel-arrow {
+              font-size: 18px;
+              padding: 8px;
+            }
+            .carousel-arrow.prev {
+              left: 5px;
+            }
+            .carousel-arrow.next {
+              right: 5px;
+            }
+          }
+        </style>
+
+        <div class="video-carousel-container">
+          <div class="video-carousel">
+            <div class="video-slide">
+              <iframe src="https://www.youtube.com/embed/FlG6tbYaA88" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-slide">
+              <iframe src="https://www.youtube.com/embed/GRhqRnj2sY0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-slide">
+              <iframe src="https://www.youtube.com/embed/zhtg9XgVwuM" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <button class="carousel-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="carousel-arrow next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
@@ -69,7 +161,7 @@ TBD
 
   <!-- Custom scripts for this template -->
   <script src="js/agency.min.js"></script>
-    
+
   <!-- Custom scripts to pick random background image -->
   <script src="vendor/jquery/jquery.random-images.js"></script>
 
@@ -77,6 +169,33 @@ TBD
     $(function(){
       $("#nav-placeholder").load("nav.html");
     });
+  </script>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.video-slide');
+    const totalSlides = slides.length;
+    const carousel = document.querySelector('.video-carousel');
+
+    function showSlide(index) {
+      if (index >= totalSlides) {
+        currentSlideIndex = 0;
+      } else if (index < 0) {
+        currentSlideIndex = totalSlides - 1;
+      } else {
+        currentSlideIndex = index;
+      }
+      const offset = -currentSlideIndex * 100;
+      if (carousel) {
+        carousel.style.transform = `translateX(${offset}%)`;
+      }
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlideIndex + direction);
+    }
+
+    showSlide(currentSlideIndex);
   </script>
 
 </body>
