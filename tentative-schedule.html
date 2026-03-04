@@ -52,56 +52,155 @@
 
           <p>The EuroSys 2026 conference will take place from Monday, April 27th to Thursday, April 30th, 2026 in Edinburgh. Below is the tentative overall schedule.</p>
 
-          <table class="table table-striped table-bordered">
+          <style>
+            #schedule-table td, #schedule-table th {
+              vertical-align: middle;
+              text-align: center;
+            }
+            #schedule-table td:first-child {
+              text-align: right;
+              white-space: nowrap;
+            }
+            #schedule-table .sched-reg {
+              background-color: #f5a623 !important;
+              color: #fff;
+            }
+            #schedule-table .sched-session {
+              background-color: #aed8f0 !important;
+            }
+            #schedule-table .sched-break {
+              background-color: #d5d5d5 !important;
+            }
+            #schedule-table .sched-event {
+              background-color: #b39ddb !important;
+              color: #fff;
+            }
+          </style>
+
+          <table id="schedule-table" class="table table-striped table-bordered">
             <thead class="thead-dark">
               <tr>
                 <th>Time</th>
-                <th>Monday 27th April<br><small>Day 0 (Workshops)</small></th>
-                <th>Tuesday 28th April<br><small>Day 1 (Conference)</small></th>
-                <th>Wednesday 29th April<br><small>Day 2 (Conference)</small></th>
-                <th>Thursday 30th April<br><small>Day 3 (Conference)</small></th>
+                <th>Monday 27th of April<br><small>Day 0 (Workshops)</small></th>
+                <th>Tuesday 28th of April<br><small>Day 1 (Conference)</small></th>
+                <th>Wednesday 29th of April<br><small>Day 2 (Conference)</small></th>
+                <th>Thursday 30th of April<br><small>Day 3 (Conference)</small></th>
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td><strong>7:30am</strong></td>
+                <td>&mdash;</td>
+                <td rowspan="3" class="sched-reg">Registration/Cafe</td>
+                <td rowspan="2">&mdash;</td>
+                <td rowspan="2">&mdash;</td>
+              </tr>
+              <tr>
                 <td><strong>8:00am</strong></td>
-                <td>Registration</td>
-                <td>Registration</td>
-                <td>Registration</td>
-                <td>Registration</td>
+                <td rowspan="4" class="sched-reg">Registration/Cafe</td>
+              </tr>
+              <tr>
+                <td><strong>8:15am</strong></td>
+                <td rowspan="2" class="sched-reg">Registration/Cafe</td>
+                <td rowspan="2" class="sched-reg">Registration/Cafe</td>
+              </tr>
+              <tr>
+                <td><strong>8:30am</strong></td>
+                <td class="sched-session">Opening</td>
+              </tr>
+              <tr>
+                <td><strong>8:45am</strong></td>
+                <td rowspan="2" class="sched-session">First Morning Session</td>
+                <td rowspan="2" class="sched-session">First Morning Session</td>
+                <td rowspan="2" class="sched-session">First Morning Session</td>
               </tr>
               <tr>
                 <td><strong>9:00am</strong></td>
-                <td>Morning sessions</td>
-                <td>Morning sessions</td>
-                <td>Morning sessions</td>
-                <td>Morning sessions</td>
+                <td rowspan="2" class="sched-session">First Morning Sessions</td>
+              </tr>
+              <tr>
+                <td><strong>10:15am</strong></td>
+                <td rowspan="2" class="sched-break">Break<br><small>Sponsor: GitLab</small></td>
+                <td rowspan="2" class="sched-break">Break<br><small>Sponsor: KAUST</small></td>
+                <td rowspan="2" class="sched-break">Break<br><small>Sponsor: Bytedance</small></td>
+              </tr>
+              <tr>
+                <td><strong>10:30am</strong></td>
+                <td rowspan="2" class="sched-break">Break</td>
+              </tr>
+              <tr>
+                <td><strong>10:45am</strong></td>
+                <td rowspan="2" class="sched-session">Second Morning Session</td>
+                <td rowspan="2" class="sched-session">Second Morning Session</td>
+                <td rowspan="2" class="sched-session">Second Morning Session</td>
+              </tr>
+              <tr>
+                <td><strong>11:00am</strong></td>
+                <td rowspan="2" class="sched-session">Second Morning Sessions</td>
+              </tr>
+              <tr>
+                <td><strong>12:15pm</strong></td>
+                <td rowspan="2" class="sched-break">Lunch<br><small>Sponsor: Alibaba</small></td>
+                <td rowspan="2" class="sched-break">Lunch<br><small>Sponsor: TBD</small></td>
+                <td rowspan="2" class="sched-break">Lunch<br><small>Sponsor: TBD</small></td>
               </tr>
               <tr>
                 <td><strong>12:30pm</strong></td>
-                <td>Lunch</td>
-                <td>Lunch</td>
-                <td>Lunch</td>
-                <td>Lunch</td>
+                <td rowspan="2" class="sched-break">Lunch</td>
               </tr>
               <tr>
                 <td><strong>1:30pm</strong></td>
-                <td>Afternoon sessions</td>
-                <td>Afternoon sessions</td>
-                <td>Afternoon sessions</td>
-                <td>Afternoon sessions</td>
+                <td rowspan="2" class="sched-session">First Afternoon Sessions</td>
+                <td rowspan="2" class="sched-session">First Afternoon Sessions</td>
+                <td rowspan="2" class="sched-session">First Afternoon Sessions</td>
+              </tr>
+              <tr>
+                <td><strong>2:00pm</strong></td>
+                <td rowspan="2" class="sched-session">First Afternoon Sessions</td>
+              </tr>
+              <tr>
+                <td><strong>3:18pm</strong></td>
+                <td rowspan="2" class="sched-break">Break<br><small>Sponsor: GitLab</small></td>
+                <td rowspan="2" class="sched-break">Break<br><small>Sponsor: KAUST</small></td>
+                <td rowspan="2" class="sched-break">Break<br><small>Sponsor: Bytedance</small></td>
+              </tr>
+              <tr>
+                <td><strong>3:30pm</strong></td>
+                <td rowspan="2" class="sched-break">Break</td>
+              </tr>
+              <tr>
+                <td><strong>3:42pm</strong></td>
+                <td rowspan="2" class="sched-session">Second Afternoon Sessions</td>
+                <td rowspan="2" class="sched-session">Second Afternoon Sessions</td>
+                <td rowspan="2" class="sched-session">Second Afternoon Sessions</td>
+              </tr>
+              <tr>
+                <td><strong>4:00pm</strong></td>
+                <td class="sched-session">Second Afternoon Sessions</td>
               </tr>
               <tr>
                 <td><strong>5:30pm</strong></td>
-                <td>Welcome reception</td>
+                <td class="sched-event">Welcome Reception</td>
+                <td class="sched-session">General Assembly</td>
+                <td class="sched-event">Posters Reception</td>
                 <td>&mdash;</td>
-                <td>Posters</td>
+              </tr>
+              <tr>
+                <td><strong>6:15pm</strong></td>
                 <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td rowspan="2">&mdash;</td>
+                <td rowspan="2">&mdash;</td>
               </tr>
               <tr>
                 <td><strong>7:30pm</strong></td>
                 <td>&mdash;</td>
-                <td>Banquet</td>
+                <td class="sched-event">Banquet (NMS)<br><small>Sponsor: Huawei</small></td>
+              </tr>
+              <tr>
+                <td><strong>9:30pm</strong></td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
                 <td>&mdash;</td>
                 <td>&mdash;</td>
               </tr>
