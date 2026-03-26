@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="webpage of EuroSys 2026">
+
+  <title>EuroSys 2026</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/agency.css" rel="stylesheet">
+
+  <style>
+    .day-header {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 20px;
+      margin-top: 30px;
+      margin-bottom: 0;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 4px 4px 0 0;
+    }
+    .day-header:hover {
+      background-color: #444;
+    }
+    .day-header .toggle-icon {
+      float: right;
+      font-size: 18px;
+    }
+    .day-content {
+      border: 1px solid #ddd;
+      border-top: none;
+      padding: 0 20px 20px 20px;
+      margin-bottom: 20px;
+      border-radius: 0 0 4px 4px;
+    }
+    .session-block {
+      margin-top: 20px;
+    }
+    .session-title {
+      background-color: #aed8f0;
+      padding: 10px 15px;
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 4px 4px 0 0;
+    }
+    .session-title .session-time {
+      font-weight: 400;
+      color: #555;
+    }
+    .session-title .session-chair {
+      font-weight: 400;
+      font-size: 14px;
+      color: #666;
+      float: right;
+    }
+    .event-block {
+      padding: 10px 15px;
+      margin-top: 20px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .event-break {
+      background-color: #d5d5d5;
+    }
+    .event-special {
+      background-color: #b39ddb;
+      color: #fff;
+    }
+    .event-reg {
+      background-color: #f5a623;
+      color: #fff;
+    }
+    .event-block .event-time {
+      font-weight: 400;
+      margin-right: 15px;
+    }
+    .event-block small {
+      font-weight: 400;
+    }
+    table.papers {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0;
+    }
+    table.papers tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+    table.papers tr:nth-child(even) {
+      background-color: #e6e6e6;
+    }
+    table.papers td {
+      padding: 8px 14px;
+      font-size: 14px;
+      line-height: 1.4;
+      vertical-align: top;
+      border: 1px solid #ddd;
+    }
+    table.papers td:first-child {
+      width: 40%;
+      font-weight: 600;
+    }
+    table.papers td:last-child {
+      width: 60%;
+    }
+    table.papers td a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+    table.papers td a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+ <div id="nav-placeholder"></div>
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+
+        <div class="intro-heading">EuroSys 2026</div>
+
+        <div class="intro-lead-in"><b>Edinburgh</b></div>
+
+        <div class="intro-lead-in"> April 27th&mdash;30th, 2026 </div>
+
+                <div class="photo-credit"> Photo from <a href="https://unsplash.com/" target="_black">Unsplash</a></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Program -->
+  <section id="program">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-heading">Preliminary Program</h2>
+
+          <p>The EuroSys 2026 conference will take place from Monday, April 27th to Thursday, April 30th, 2026 in Edinburgh.</p>
+
+          <!-- ==================== DAY 1: Tuesday 28th ==================== -->
+          <h3 class="day-header" onclick="toggleDay('day1')">
+            Tuesday, April 28th &mdash; Day 1 (Conference)
+            <span class="toggle-icon" id="day1-icon">&#9660;</span>
+          </h3>
+          <div class="day-content" id="day1">
+
+            <div class="event-block event-reg">
+              <span class="event-time">7:30 &ndash; 8:30</span> Registration / Cafe
+            </div>
+
+            <div class="event-block" style="background-color: #aed8f0;">
+              <span class="event-time">8:30 &ndash; 8:45</span> Opening
+            </div>
+
+            <!-- Session 1.1 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">8:45 &ndash; 10:15</span> &nbsp;
+                Session 1.1: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 1</a></td>
+                  <td>Author A (University X), Author B (University Y), Author C (University Z)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 2</a></td>
+                  <td>Author D (University W), Author E (University V)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 3</a></td>
+                  <td>Author F (University U), Author G (University T), Author H (University S)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">10:15 &ndash; 10:45</span> Break
+              <small>&mdash; Sponsor: GitLab</small>
+            </div>
+
+            <!-- Session 1.2 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">10:45 &ndash; 12:15</span> &nbsp;
+                Session 1.2: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 4</a></td>
+                  <td>Author I (University R), Author J (University Q)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 5</a></td>
+                  <td>Author K (University P), Author L (University O)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 6</a></td>
+                  <td>Author M (University N), Author N (University M)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">12:15 &ndash; 13:30</span> Lunch
+              <small>&mdash; Sponsor: Alibaba</small>
+            </div>
+
+            <!-- Session 1.3 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">13:30 &ndash; 15:18</span> &nbsp;
+                Session 1.3: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 7</a></td>
+                  <td>Author O (University L), Author P (University K)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 8</a></td>
+                  <td>Author Q (University J), Author R (University I)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">15:18 &ndash; 15:42</span> Break
+              <small>&mdash; Sponsor: GitLab</small>
+            </div>
+
+            <!-- Session 1.4 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">15:42 &ndash; 17:30</span> &nbsp;
+                Session 1.4: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 9</a></td>
+                  <td>Author S (University H), Author T (University G)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 10</a></td>
+                  <td>Author U (University F), Author V (University E)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block" style="background-color: #aed8f0;">
+              <span class="event-time">17:30 &ndash; 18:15</span> General Assembly
+            </div>
+
+            <div class="event-block event-special">
+              <span class="event-time">18:15 &ndash; 19:30</span> Banquet (NMS)
+              <small>&mdash; Sponsor: Huawei</small>
+            </div>
+
+          </div>
+
+          <!-- ==================== DAY 2: Wednesday 29th ==================== -->
+          <h3 class="day-header" onclick="toggleDay('day2')">
+            Wednesday, April 29th &mdash; Day 2 (Conference)
+            <span class="toggle-icon" id="day2-icon">&#9660;</span>
+          </h3>
+          <div class="day-content" id="day2">
+
+            <div class="event-block event-reg">
+              <span class="event-time">8:15 &ndash; 8:45</span> Registration / Cafe
+            </div>
+
+            <!-- Session 2.1 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">8:45 &ndash; 10:15</span> &nbsp;
+                Session 2.1: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 11</a></td>
+                  <td>Author W (University D), Author X (University C)</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Paper Title 12</a></td>
+                  <td>Author Y (University B), Author Z (University A)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">10:15 &ndash; 10:45</span> Break
+              <small>&mdash; Sponsor: KAUST</small>
+            </div>
+
+            <!-- Session 2.2 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">10:45 &ndash; 12:15</span> &nbsp;
+                Session 2.2: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 13</a></td>
+                  <td>Author AA (University AA), Author BB (University BB)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">12:15 &ndash; 13:30</span> Lunch
+              <small>&mdash; Sponsor: TBD</small>
+            </div>
+
+            <!-- Session 2.3 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">13:30 &ndash; 15:18</span> &nbsp;
+                Session 2.3: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 14</a></td>
+                  <td>Author CC (University CC), Author DD (University DD)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">15:18 &ndash; 15:42</span> Break
+              <small>&mdash; Sponsor: KAUST</small>
+            </div>
+
+            <!-- Session 2.4 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">15:42 &ndash; 17:30</span> &nbsp;
+                Session 2.4: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 15</a></td>
+                  <td>Author EE (University EE), Author FF (University FF)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-special">
+              <span class="event-time">17:30 &ndash; 19:30</span> Posters Reception
+            </div>
+
+          </div>
+
+          <!-- ==================== DAY 3: Thursday 30th ==================== -->
+          <h3 class="day-header" onclick="toggleDay('day3')">
+            Thursday, April 30th &mdash; Day 3 (Conference)
+            <span class="toggle-icon" id="day3-icon">&#9660;</span>
+          </h3>
+          <div class="day-content" id="day3">
+
+            <div class="event-block event-reg">
+              <span class="event-time">8:15 &ndash; 8:45</span> Registration / Cafe
+            </div>
+
+            <!-- Session 3.1 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">8:45 &ndash; 10:15</span> &nbsp;
+                Session 3.1: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 16</a></td>
+                  <td>Author GG (University GG), Author HH (University HH)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">10:15 &ndash; 10:45</span> Break
+              <small>&mdash; Sponsor: Bytedance</small>
+            </div>
+
+            <!-- Session 3.2 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">10:45 &ndash; 12:15</span> &nbsp;
+                Session 3.2: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 17</a></td>
+                  <td>Author II (University II), Author JJ (University JJ)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">12:15 &ndash; 13:30</span> Lunch
+              <small>&mdash; Sponsor: TBD</small>
+            </div>
+
+            <!-- Session 3.3 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">13:30 &ndash; 15:18</span> &nbsp;
+                Session 3.3: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 18</a></td>
+                  <td>Author KK (University KK), Author LL (University LL)</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="event-block event-break">
+              <span class="event-time">15:18 &ndash; 15:42</span> Break
+              <small>&mdash; Sponsor: Bytedance</small>
+            </div>
+
+            <!-- Session 3.4 -->
+            <div class="session-block">
+              <div class="session-title">
+                <span class="session-time">15:42 &ndash; 17:30</span> &nbsp;
+                Session 3.4: Topic TBD
+                <span class="session-chair">Chair: TBD</span>
+              </div>
+              <table class="papers">
+                <tr>
+                  <td><a href="#">Paper Title 19</a></td>
+                  <td>Author MM (University MM), Author NN (University NN)</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+
+          <p style="margin-top: 20px;"><em>Note: Detailed session information will be announced closer to the conference date.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <span class="copyright">Copyright &copy; EuroSys 2026</span><br/>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+
+  <!-- Custom scripts to pick random background image -->
+  <script src="vendor/jquery/jquery.random-images.js"></script>
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("nav.html");
+    });
+
+    function toggleDay(dayId) {
+      var content = document.getElementById(dayId);
+      var icon = document.getElementById(dayId + '-icon');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.innerHTML = '&#9660;';
+      } else {
+        content.style.display = 'none';
+        icon.innerHTML = '&#9654;';
+      }
+    }
+  </script>
+</body>
+
+</html>
