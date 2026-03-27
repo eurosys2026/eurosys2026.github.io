@@ -20,6 +20,9 @@
   <link href="css/agency.css" rel="stylesheet">
 
   <style>
+    #program .container {
+      max-width: 1400px;
+    }
     .day-header {
       background-color: #333;
       color: #fff;
@@ -40,87 +43,69 @@
     .day-content {
       border: 1px solid #ddd;
       border-top: none;
-      padding: 0 20px 20px 20px;
+      padding: 0;
       margin-bottom: 20px;
       border-radius: 0 0 4px 4px;
     }
-    .session-block {
-      margin-top: 20px;
-    }
-    .session-title {
-      background-color: #aed8f0;
-      padding: 10px 15px;
-      margin-bottom: 0;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 4px 4px 0 0;
-    }
-    .session-title .session-time {
-      font-weight: 400;
-      color: #555;
-    }
-    .session-title .session-chair {
-      font-weight: 400;
-      font-size: 14px;
-      color: #666;
-      float: right;
-    }
-    .event-block {
-      padding: 10px 15px;
-      margin-top: 20px;
-      border-radius: 4px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-    .event-break {
-      background-color: #d5d5d5;
-    }
-    .event-special {
-      background-color: #b39ddb;
-      color: #fff;
-    }
-    .event-reg {
-      background-color: #f5a623;
-      color: #fff;
-    }
-    .event-block .event-time {
-      font-weight: 400;
-      margin-right: 15px;
-    }
-    .event-block small {
-      font-weight: 400;
-    }
-    table.papers {
+    table.prog {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 0;
+      table-layout: fixed;
     }
-    table.papers tr:nth-child(odd) {
-      background-color: #f2f2f2;
-    }
-    table.papers tr:nth-child(even) {
-      background-color: #e6e6e6;
-    }
-    table.papers td {
+    table.prog td, table.prog th {
       padding: 8px 14px;
       font-size: 14px;
-      line-height: 1.4;
-      vertical-align: top;
-      border: 1px solid #ddd;
+      line-height: 1.5;
+      vertical-align: middle;
+      border: 1px solid #ccc;
     }
-    table.papers td:first-child {
-      width: 40%;
+    table.prog td:first-child {
+      width: 25%;
       font-weight: 600;
+      vertical-align: middle;
     }
-    table.papers td:last-child {
-      width: 60%;
+    table.prog tbody tr:nth-child(odd) {
+      background-color: #f2f2f2;
     }
-    table.papers td a {
-      color: #1a0dab;
-      text-decoration: none;
+    table.prog tbody tr:nth-child(even) {
+      background-color: #e9e9e9;
     }
-    table.papers td a:hover {
-      text-decoration: underline;
+    table.prog .session-cell {
+      background-color: #aed8f0 !important;
+      font-weight: 600;
+      font-size: 14px;
+      vertical-align: middle;
+      text-align: center;
+    }
+    table.prog .break-row td {
+      background-color: #d5d5d5 !important;
+      font-weight: 600;
+      text-align: center;
+    }
+    table.prog .event-row td {
+      background-color: #b39ddb !important;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+    table.prog .reg-row td {
+      background-color: #f5a623 !important;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+    table.prog .opening-row td {
+      background-color: #444 !important;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+    table.prog .track-header {
+      background-color: #444 !important;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
     }
   </style>
 
@@ -153,318 +138,415 @@
         <div class="col-12">
           <h2 class="section-heading">Preliminary Program</h2>
 
-          <p>The EuroSys 2026 conference will take place from Monday, April 27th to Thursday, April 30th, 2026 in Edinburgh.</p>
+          <p>The EuroSys 2026 conference will take place from Tuesday, April 28th to Thursday, April 30th, 2026 in Edinburgh. Below is the preliminary conference technical program.</p>
 
-          <!-- ==================== DAY 1: Tuesday 28th ==================== -->
+          <!-- ==================== TUESDAY ==================== -->
           <h3 class="day-header" onclick="toggleDay('day1')">
             Tuesday, April 28th &mdash; Day 1 (Conference)
             <span class="toggle-icon" id="day1-icon">&#9660;</span>
           </h3>
           <div class="day-content" id="day1">
+            <table class="prog">
+              <colgroup>
+                <col style="width:25%">
+                <col style="width:75%">
+              </colgroup>
+              <tbody>
+                <!-- Registration -->
+                <tr class="reg-row">
+                  <td colspan="2">7:30 &ndash; 8:30 &nbsp; Registration / Cafe</td>
+                </tr>
+                <!-- Opening -->
+                <tr class="opening-row">
+                  <td colspan="2">8:30 &ndash; 8:45 &nbsp; Opening</td>
+                </tr>
 
-            <div class="event-block event-reg">
-              <span class="event-time">7:30 &ndash; 8:30</span> Registration / Cafe
-            </div>
-
-            <div class="event-block" style="background-color: #aed8f0;">
-              <span class="event-time">8:30 &ndash; 8:45</span> Opening
-            </div>
-
-            <!-- Session 1.1 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">8:45 &ndash; 10:15</span> &nbsp;
-                Session 1.1: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- OS & Virtualization -->
                 <tr>
-                  <td><a href="#">Paper Title 1</a></td>
-                  <td>Author A (University X), Author B (University Y), Author C (University Z)</td>
+                  <td rowspan="5" class="session-cell">8:45 &ndash; 10:15<br>OS &amp; Virtualization</td>
+                  <td>RaidenSwap: A Multi-Swap Remote System for Multi-core Applications</td>
+                </tr>
+                <tr><td>CofferOS: Hardening OS-level Virtualization with Rust</td></tr>
+                <tr><td>Proteus: Heterogeneous FPGA Virtualization</td></tr>
+                <tr><td>TierScape: Harnessing Multiple Compressed Tiers to Tame Server Memory TCO</td></tr>
+                <tr><td>PaCaR: Improved Buffered I/O Locality on NUMA Systems with Page Cache Replication</td></tr>
+
+                <!-- Break -->
+                <tr class="break-row">
+                  <td colspan="2">10:15 &ndash; 10:45 &nbsp; Break</td>
+                </tr>
+
+                <!-- File Systems & Storage -->
+                <tr>
+                  <td rowspan="5" class="session-cell">10:45 &ndash; 12:15<br>File Systems &amp; Storage</td>
+                  <td>TCO-driven Storage Provisioning for Exascale Data Centers</td>
+                </tr>
+                <tr><td>MesaFS: An I/O-Efficient Metadata Service for Distributed File Systems</td></tr>
+                <tr><td>A Logically Disaggregated Cache for Replicated Storage Systems</td></tr>
+                <tr><td>ASIC-based Compression Accelerators for Storage Systems: Design, Placement, and Profiling Insights</td></tr>
+                <tr><td>SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination</td></tr>
+
+                <!-- Lunch -->
+                <tr class="break-row">
+                  <td colspan="2">12:15 &ndash; 13:30 &nbsp; Lunch</td>
+                </tr>
+
+                <!-- 1:30-3:18 Multi-Track -->
+                <!-- Track A -->
+                <tr>
+                  <td colspan="2" class="track-header">13:30 &ndash; 15:18 &nbsp; Multi-Track</td>
                 </tr>
                 <tr>
-                  <td><a href="#">Paper Title 2</a></td>
-                  <td>Author D (University W), Author E (University V)</td>
+                  <td rowspan="6" class="session-cell">Track A<br>LLM Training at Scale</td>
+                  <td>MegaScale-Data: Scaling DataLoader for Multisource Large Foundation Model Training</td>
                 </tr>
+                <tr><td>MegaScale-MoE: Large-Scale Communication-Efficient Training of Mixture-of-Experts Models in Production</td></tr>
+                <tr><td>MegaScale-Omni: A Hyper-Scale, Workload-Resilient System for MultiModal LLM Training in Production</td></tr>
+                <tr><td>HetAuto: Cross-Cluster Auto-Parallelism for Heterogeneous Distributed Training</td></tr>
+                <tr><td>HARP: Orchestrating Automated Parallel Training on Heterogeneous GPU Clusters</td></tr>
+                <tr><td>Suika: Efficient and High-quality Re-scheduling of 3D-parallelized LLM Training Jobs in Shared Clusters</td></tr>
+
+                <!-- Track B -->
                 <tr>
-                  <td><a href="#">Paper Title 3</a></td>
-                  <td>Author F (University U), Author G (University T), Author H (University S)</td>
+                  <td rowspan="6" class="session-cell">Track B<br>Datacenter Network Fabrics &amp; RDMA</td>
+                  <td>REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks</td></tr>
+                <tr><td>SmartNS: Enabling Line-rate and Flexible Network Stack with SmartNIC</td></tr>
+                <tr><td>RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs</td></tr>
+                <tr><td>Practical and Scalable RDMA Connection Sharing for HPC Workload</td></tr>
+                <tr><td>Not A DPU in Name Only! Unleashing RDMA-capable DPUs in Multi-Tenant Serverless Clouds with NADINO</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">10:15 &ndash; 10:45</span> Break
-              <small>&mdash; Sponsor: GitLab</small>
-            </div>
-
-            <!-- Session 1.2 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">10:45 &ndash; 12:15</span> &nbsp;
-                Session 1.2: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- Track C -->
                 <tr>
-                  <td><a href="#">Paper Title 4</a></td>
-                  <td>Author I (University R), Author J (University Q)</td>
+                  <td rowspan="6" class="session-cell">Track C<br>Cloud &amp; Serverless Resource Management</td>
+                  <td>iRoute: Local Routing Table-based Workflow Management in Serverless Computing</td>
                 </tr>
+                <tr><td>Efficient Data Passing for Serverless Inference Workflows: A GPU-Centric Approach</td></tr>
+                <tr><td>Serverless Replication of Object Storage across Multi-Vendor Clouds and Regions</td></tr>
+                <tr><td>MTTM: Dynamic Fast Memory Partitioning with Bandwidth Optimization for Multi-tenant Cloud</td></tr>
+                <tr><td>Demystifying Serverless Costs on Public Platforms: Bridging Billing, Architecture, and OS Scheduling</td></tr>
+                <tr><td>In-Production Characterization of an Open Source Serverless Platform and New Scaling Strategies</td></tr>
+
+                <!-- Break -->
+                <tr class="break-row">
+                  <td colspan="2">15:18 &ndash; 15:42 &nbsp; Break</td>
+                </tr>
+
+                <!-- 3:42-5:30 Multi-Track -->
                 <tr>
-                  <td><a href="#">Paper Title 5</a></td>
-                  <td>Author K (University P), Author L (University O)</td>
+                  <td colspan="2" class="track-header">15:42 &ndash; 17:30 &nbsp; Multi-Track</td>
                 </tr>
+                <!-- Track A -->
                 <tr>
-                  <td><a href="#">Paper Title 6</a></td>
-                  <td>Author M (University N), Author N (University M)</td>
+                  <td rowspan="6" class="session-cell">Track A<br>On-Device &amp; Federated Learning</td>
+                  <td>Federated Fine-Tuning of Sparsely-Activated Large Language Models on Resource-Constrained Devices</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>TailorLLM: Collaborative End-Cloud Inference of Large and Small Language Models Based on Low-Rank Adaptation</td></tr>
+                <tr><td>SwiftFL: Enabling Speculative Training for On-Device Federated Deep Learning</td></tr>
+                <tr><td>viNPU: Optimizing Vision Transformer Inference on Mobile NPUs</td></tr>
+                <tr><td>AIMS: A Cost-Efficient Framework for LLM-based Agent Deployment in Cloud-Edge Hybrid Environments</td></tr>
+                <tr><td>Scaling LLM Test-Time Compute with Mobile NPU on Smartphones</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">12:15 &ndash; 13:30</span> Lunch
-              <small>&mdash; Sponsor: Alibaba</small>
-            </div>
-
-            <!-- Session 1.3 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">13:30 &ndash; 15:18</span> &nbsp;
-                Session 1.3: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- Track B -->
                 <tr>
-                  <td><a href="#">Paper Title 7</a></td>
-                  <td>Author O (University L), Author P (University K)</td>
+                  <td rowspan="6" class="session-cell">Track B<br>Distributed Consensus, Blockchain &amp; Storage</td>
+                  <td>Ethane: Debloating State Data using Compact Trie for Account-based Blockchain</td>
                 </tr>
+                <tr><td>Scalable RDMA-accelerated Distributed Locks with Shared Stream Abstraction</td></tr>
+                <tr><td>OptiLog: Assigning Roles in Byzantine Consensus</td></tr>
+                <tr><td>FicusDB: Scalable Multi-Versioned Authenticated Storage</td></tr>
+                <tr><td>Towards Improving Throughput and Scalability of DAG-based BFT SMR</td></tr>
+                <tr><td>ECCB: Boosting Block Propagation of Blockchain with Erasure-Coded Compact Block</td></tr>
+
+                <!-- Track C -->
                 <tr>
-                  <td><a href="#">Paper Title 8</a></td>
-                  <td>Author Q (University J), Author R (University I)</td>
+                  <td rowspan="6" class="session-cell">Track C<br>Fault Tolerance, Reliability &amp; Debugging</td>
+                  <td>A Case for Elastic Quantum Error Correction Decoders</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>Accurate and Ultra-Fast Launch-Time Validation of Idempotency for GPU Kernels</td></tr>
+                <tr><td>Fast and Parallelized Crash Consistency with Opportunistic Order Elimination</td></tr>
+                <tr><td>Proactive Change Risk Detection in Production Cloud Systems: ByteDance's Experience</td></tr>
+                <tr><td>Rose: Reproducing External-Fault-Induced Failures in Distributed Systems with Lightweight Instrumentation</td></tr>
+                <tr><td>Garen: Reliable Cluster Management with Atomic State Reconciliation</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">15:18 &ndash; 15:42</span> Break
-              <small>&mdash; Sponsor: GitLab</small>
-            </div>
-
-            <!-- Session 1.4 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">15:42 &ndash; 17:30</span> &nbsp;
-                Session 1.4: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
-                <tr>
-                  <td><a href="#">Paper Title 9</a></td>
-                  <td>Author S (University H), Author T (University G)</td>
+                <!-- General Assembly -->
+                <tr class="opening-row">
+                  <td colspan="2">17:30 &ndash; 18:15 &nbsp; General Assembly</td>
                 </tr>
-                <tr>
-                  <td><a href="#">Paper Title 10</a></td>
-                  <td>Author U (University F), Author V (University E)</td>
+
+                <!-- Banquet -->
+                <tr class="event-row">
+                  <td colspan="2">18:15 &ndash; 19:30 &nbsp; Banquet (NMS)</td>
                 </tr>
-              </table>
-            </div>
-
-            <div class="event-block" style="background-color: #aed8f0;">
-              <span class="event-time">17:30 &ndash; 18:15</span> General Assembly
-            </div>
-
-            <div class="event-block event-special">
-              <span class="event-time">18:15 &ndash; 19:30</span> Banquet (NMS)
-              <small>&mdash; Sponsor: Huawei</small>
-            </div>
-
+              </tbody>
+            </table>
           </div>
 
-          <!-- ==================== DAY 2: Wednesday 29th ==================== -->
+          <!-- ==================== WEDNESDAY ==================== -->
           <h3 class="day-header" onclick="toggleDay('day2')">
             Wednesday, April 29th &mdash; Day 2 (Conference)
             <span class="toggle-icon" id="day2-icon">&#9660;</span>
           </h3>
           <div class="day-content" id="day2">
-
-            <div class="event-block event-reg">
-              <span class="event-time">8:15 &ndash; 8:45</span> Registration / Cafe
-            </div>
-
-            <!-- Session 2.1 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">8:45 &ndash; 10:15</span> &nbsp;
-                Session 2.1: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
-                <tr>
-                  <td><a href="#">Paper Title 11</a></td>
-                  <td>Author W (University D), Author X (University C)</td>
+            <table class="prog">
+              <colgroup>
+                <col style="width:25%">
+                <col style="width:75%">
+              </colgroup>
+              <tbody>
+                <!-- Registration -->
+                <tr class="reg-row">
+                  <td colspan="2">8:15 &ndash; 8:45 &nbsp; Registration / Cafe</td>
                 </tr>
+
+                <!-- AI -->
                 <tr>
-                  <td><a href="#">Paper Title 12</a></td>
-                  <td>Author Y (University B), Author Z (University A)</td>
+                  <td rowspan="5" class="session-cell">8:45 &ndash; 10:15<br>AI</td>
+                  <td>STAlloc: Enhancing Memory Efficiency in Large-Scale Model Training with Spatio-Temporal Planning</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>SAS: Sparse Attention Synthesizer for Efficient Language Model Inference</td></tr>
+                <tr><td>AdaServe: Accelerating Multi-SLO LLM Serving with SLO-Customized Speculative Decoding</td></tr>
+                <tr><td>TAO: Tolerance-Aware Optimistic Verification for Floating-Point Neural Networks</td></tr>
+                <tr><td>Arena: Efficiently Training Large Models via Dynamic Scheduling and Adaptive Parallelism Co-Design</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">10:15 &ndash; 10:45</span> Break
-              <small>&mdash; Sponsor: KAUST</small>
-            </div>
+                <!-- Break -->
+                <tr class="break-row">
+                  <td colspan="2">10:15 &ndash; 10:45 &nbsp; Break</td>
+                </tr>
 
-            <!-- Session 2.2 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">10:45 &ndash; 12:15</span> &nbsp;
-                Session 2.2: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- Security -->
                 <tr>
-                  <td><a href="#">Paper Title 13</a></td>
-                  <td>Author AA (University AA), Author BB (University BB)</td>
+                  <td rowspan="5" class="session-cell">10:45 &ndash; 12:15<br>Security</td>
+                  <td>CSnake: Detecting Self-Sustaining Cascading Failure via Causal Stitching of Fault Propagations</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>Five Minutes of DDoS Brings down Tor: DDoS Attacks on the Tor Directory Protocol and Mitigations</td></tr>
+                <tr><td>Fuzzing Enterprise-Grade Blockchain Systems: Industrial Practice and Solutions</td></tr>
+                <tr><td>Avicenna: Masking Slowdowns in Replicated State Machines with Counterfactual Evaluation</td></tr>
+                <tr><td>Concord: Learning Network Configuration Contracts</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">12:15 &ndash; 13:30</span> Lunch
-              <small>&mdash; Sponsor: TBD</small>
-            </div>
+                <!-- Lunch -->
+                <tr class="break-row">
+                  <td colspan="2">12:15 &ndash; 13:30 &nbsp; Lunch</td>
+                </tr>
 
-            <!-- Session 2.3 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">13:30 &ndash; 15:18</span> &nbsp;
-                Session 2.3: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- 1:30-3:18 Multi-Track -->
                 <tr>
-                  <td><a href="#">Paper Title 14</a></td>
-                  <td>Author CC (University CC), Author DD (University DD)</td>
+                  <td colspan="2" class="track-header">13:30 &ndash; 15:18 &nbsp; Multi-Track</td>
                 </tr>
-              </table>
-            </div>
-
-            <div class="event-block event-break">
-              <span class="event-time">15:18 &ndash; 15:42</span> Break
-              <small>&mdash; Sponsor: KAUST</small>
-            </div>
-
-            <!-- Session 2.4 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">15:42 &ndash; 17:30</span> &nbsp;
-                Session 2.4: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- Track A -->
                 <tr>
-                  <td><a href="#">Paper Title 15</a></td>
-                  <td>Author EE (University EE), Author FF (University FF)</td>
+                  <td rowspan="6" class="session-cell">Track A<br>LLM Inference</td>
+                  <td>High Throughput and Low Latency LLM Serving via Adaptive KV Caching</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>FlexPipe: Adapting Dynamic LLM Serving Through Inflight Pipeline Refactoring in Fragmented Serverless Clusters</td></tr>
+                <tr><td>Taming Latency-Memory Trade-Off in MoE-Based LLM Serving via Fine-Grained Expert Offloading</td></tr>
+                <tr><td>PARD: Enhancing Goodput for Inference Pipeline via Proactive Request Dropping</td></tr>
+                <tr><td>TokenFlow: Responsive LLM Text Streaming Serving under Request Burst via Preemptive Scheduling</td></tr>
+                <tr><td>KUNSERVE: Parameter-centric Memory Management for Efficient Memory Overloading Handling in LLM Serving</td></tr>
 
-            <div class="event-block event-special">
-              <span class="event-time">17:30 &ndash; 19:30</span> Posters Reception
-            </div>
+                <!-- Track B -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track B<br>Traffic Engineering, CDNs &amp; Congestion Control</td>
+                  <td>Learn-to-Probe: Achieving Signal Distinguishability in Learning-based Congestion Control</td>
+                </tr>
+                <tr><td>Mitigating CDN Cache Misses with Scheduling: An Origin Shield for Billion-QPS Social Platforms</td></tr>
+                <tr><td>EMVOD: Elastic Multi-Path QUIC Scheduling for CDN Video-on-Demand Service</td></tr>
+                <tr><td>ECOTE: Priority-Aware Optical Restoration for WAN Traffic Engineering</td></tr>
+                <tr><td>RLive: Robust Delivery System for Scaling Live Streaming Services</td></tr>
+                <tr><td>Canopy: Property-Driven Learning for Congestion Control</td></tr>
 
+                <!-- Track C -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track C<br>Storage Systems</td>
+                  <td>Once Rolling Hashing is Enough: Exploiting Rolling Hash Reuse in Delta Compression</td>
+                </tr>
+                <tr><td>Scheduling Cloud Block Storage Proactively and Reactively with Omar</td></tr>
+                <tr><td>PASS: A Power Adaptive Storage Server</td></tr>
+                <tr><td>Million-Scale Text-to-Video Retrieval with Hyperdimensional Computing</td></tr>
+                <tr><td>ColdCode: Cold Data Encoding for Enhanced Reliability and Lifetime in 3D NAND Flash</td></tr>
+                <tr><td>2DIO: Configurable and Cache-Accurate Trace Generation for Storage Benchmarking</td></tr>
+
+                <!-- Break -->
+                <tr class="break-row">
+                  <td colspan="2">15:18 &ndash; 15:42 &nbsp; Break</td>
+                </tr>
+
+                <!-- 3:42-5:30 Multi-Track -->
+                <tr>
+                  <td colspan="2" class="track-header">15:42 &ndash; 17:30 &nbsp; Multi-Track</td>
+                </tr>
+                <!-- Track A -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track A<br>LLM Serving &amp; Agents</td>
+                  <td>From Imperative to Declarative: Towards LLM-friendly OS Interfaces for Boosted Computer-Use Agents</td>
+                </tr>
+                <tr><td>AdaGen: Workload-Adaptive Cluster Scheduler for Latency-Optimal LLM Inference Serving</td></tr>
+                <tr><td>SkyWalker: A Locality-Aware Cross-Region Load Balancer for LLM Inference</td></tr>
+                <tr><td>MFS: An Efficient Model Family Serving System for LLMs</td></tr>
+                <tr><td>Efficient Multimodal Serving via Module Multiplexing</td></tr>
+                <tr><td>PiLLM: Resource-Efficient LLM Inference Using Workload Prediction</td></tr>
+
+                <!-- Track B -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track B<br>Security, Privacy &amp; Vulnerabilities</td>
+                  <td>Effective On-Hardware Fuzzing of Embedded Operating Systems</td>
+                </tr>
+                <tr><td>Digital Hole: Bypassing Commercial Audio DRM Solutions with DReaMcatcher</td></tr>
+                <tr><td>TrustWeave: Integrity Measurement and Attestation For Multi-Cloud LLMs</td></tr>
+                <tr><td>TZ-LLM: Protecting On-Device Large Language Models with Arm TrustZone</td></tr>
+                <tr><td>NecoFuzz: Effective Fuzzing of Nested Virtualization via Fuzz-Harness Virtual Machines</td></tr>
+                <tr><td>LifeFuzz: Lifecycle-Guided Fuzzing for Windows Driver Cross-Handler Vulnerabilities</td></tr>
+
+                <!-- Track C -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track C<br>Architecture, Accelerators &amp; Heterogentic Computing</td>
+                  <td>Chimera: Transparent and High-Performance ISAX Heterogeneous Computing via Binary Rewriting</td>
+                </tr>
+                <tr><td>Reducing the GPU Memory Bottleneck with Lossless Compression for ML</td></tr>
+                <tr><td>swKokkos: An Athread Backend for Enhanced Kokkos with the Sunway Heterogeneous Architecture</td></tr>
+                <tr><td>Accelerating Transactional Execution via Processing-In-Memory</td></tr>
+                <tr><td>Matrix-PIC: Harnessing Matrix Outer-product for High-Performance Particle-in-Cell Simulations</td></tr>
+                <tr><td>CHARM: Chiplet Heterogeneity-Aware Runtime Mapping System</td></tr>
+
+                <!-- Posters -->
+                <tr class="event-row">
+                  <td colspan="2">17:30 &ndash; 19:30 &nbsp; Posters Reception</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- ==================== DAY 3: Thursday 30th ==================== -->
+          <!-- ==================== THURSDAY ==================== -->
           <h3 class="day-header" onclick="toggleDay('day3')">
             Thursday, April 30th &mdash; Day 3 (Conference)
             <span class="toggle-icon" id="day3-icon">&#9660;</span>
           </h3>
           <div class="day-content" id="day3">
-
-            <div class="event-block event-reg">
-              <span class="event-time">8:15 &ndash; 8:45</span> Registration / Cafe
-            </div>
-
-            <!-- Session 3.1 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">8:45 &ndash; 10:15</span> &nbsp;
-                Session 3.1: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
-                <tr>
-                  <td><a href="#">Paper Title 16</a></td>
-                  <td>Author GG (University GG), Author HH (University HH)</td>
+            <table class="prog">
+              <colgroup>
+                <col style="width:25%">
+                <col style="width:75%">
+              </colgroup>
+              <tbody>
+                <!-- Registration -->
+                <tr class="reg-row">
+                  <td colspan="2">8:15 &ndash; 8:45 &nbsp; Registration / Cafe</td>
                 </tr>
-              </table>
-            </div>
 
-            <div class="event-block event-break">
-              <span class="event-time">10:15 &ndash; 10:45</span> Break
-              <small>&mdash; Sponsor: Bytedance</small>
-            </div>
-
-            <!-- Session 3.2 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">10:45 &ndash; 12:15</span> &nbsp;
-                Session 3.2: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- Cloud -->
                 <tr>
-                  <td><a href="#">Paper Title 17</a></td>
-                  <td>Author II (University II), Author JJ (University JJ)</td>
+                  <td rowspan="5" class="session-cell">8:45 &ndash; 10:15<br>Cloud</td>
+                  <td>Prediction-Informed Power Management for General-Purpose Compute Servers</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>Lessons Learned from Incorporating Formal Methods in Huawei Cloud Reliability</td></tr>
+                <tr><td>DROPS: Managing Serverless Resource Pools in Microsoft Azure Functions</td></tr>
+                <tr><td>SKernel: An Elastic and Efficient Secure Container System at Scale with a Split-Kernel Architecture</td></tr>
+                <tr><td>Fix: externalizing network I/O in serverless computing</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">12:15 &ndash; 13:30</span> Lunch
-              <small>&mdash; Sponsor: TBD</small>
-            </div>
+                <!-- Break -->
+                <tr class="break-row">
+                  <td colspan="2">10:15 &ndash; 10:45 &nbsp; Break</td>
+                </tr>
 
-            <!-- Session 3.3 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">13:30 &ndash; 15:18</span> &nbsp;
-                Session 3.3: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- Distributed Systems -->
                 <tr>
-                  <td><a href="#">Paper Title 18</a></td>
-                  <td>Author KK (University KK), Author LL (University LL)</td>
+                  <td rowspan="5" class="session-cell">10:45 &ndash; 12:15<br>Distributed Systems</td>
+                  <td>Yield Not Thy Core</td>
                 </tr>
-              </table>
-            </div>
+                <tr><td>AEP: Achieving Hierarchical Fault Tolerance in DSM Through Atomic Execution Protection</td></tr>
+                <tr><td>Enabling Packet Spraying over Commodity RNICs with In-Network Support</td></tr>
+                <tr><td>FUR: Fast and Unlimited Reads on Persistent Memory Transactions</td></tr>
+                <tr><td>Rearchitecting Programmable Networks For In-Network Computing: From Hardware To Language</td></tr>
 
-            <div class="event-block event-break">
-              <span class="event-time">15:18 &ndash; 15:42</span> Break
-              <small>&mdash; Sponsor: Bytedance</small>
-            </div>
+                <!-- Lunch -->
+                <tr class="break-row">
+                  <td colspan="2">12:15 &ndash; 13:30 &nbsp; Lunch</td>
+                </tr>
 
-            <!-- Session 3.4 -->
-            <div class="session-block">
-              <div class="session-title">
-                <span class="session-time">15:42 &ndash; 17:30</span> &nbsp;
-                Session 3.4: Topic TBD
-                <span class="session-chair">Chair: TBD</span>
-              </div>
-              <table class="papers">
+                <!-- 1:30-3:18 Multi-Track -->
                 <tr>
-                  <td><a href="#">Paper Title 19</a></td>
-                  <td>Author MM (University MM), Author NN (University NN)</td>
+                  <td colspan="2" class="track-header">13:30 &ndash; 15:18 &nbsp; Multi-Track</td>
                 </tr>
-              </table>
-            </div>
+                <!-- Track A -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track A<br>Distributed Training &amp; Collective Communication</td>
+                  <td>Laminar: A Scalable Asynchronous RL Post-Training Framework</td>
+                </tr>
+                <tr><td>Multipath Collective Communication Beyond Scale-up Networks in GPU Clouds</td></tr>
+                <tr><td>Crimson: Collaborative Parameter Updates for Efficient Pipeline Training of Large Language Models</td></tr>
+                <tr><td>Zeppelin: Balancing Variable-length Workloads in Data Parallel Large Model Training</td></tr>
+                <tr><td>Efficient and Adaptable Overlapping for Computation and Communication via Signaling and Reordering</td></tr>
+                <tr><td>MinatoLoader: Accelerating Machine Learning Training Through Efficient Data Preprocessing</td></tr>
 
+                <!-- Track B -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track B<br>Programmable Networks, SmartNICs &amp; Accelerators</td>
+                  <td>Handling Network Faults in Distributed AI Training: Failover is Now an Option</td>
+                </tr>
+                <tr><td>GeDES: GPU-Driven Discrete Event Network Simulator</td></tr>
+                <tr><td>PatternSketch: General and Runtime Reconfigurable Time-series Network Traffic Pattern Detection</td></tr>
+                <tr><td>LightDSA: Enabling Efficient DSA Through Hardware-Aware Transparent Optimization</td></tr>
+                <tr><td>NutCracker: A Compilation Framework for Hybrid DPU Architectures</td></tr>
+                <tr><td>BASK: Batch And SmartNIC-offloaded KSM</td></tr>
+
+                <!-- Track C -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track C<br>Virtualization, Containers &amp; OS Specialization</td>
+                  <td>Practical and Efficient x86-64 Emulation on RISC-V</td>
+                </tr>
+                <tr><td>Pyramid: A Secure, Resource-Efficient, and Pluggable Kubernetes for Multi-Tenancy</td></tr>
+                <tr><td>Wayfinder: Automated Operating System Specialization</td></tr>
+                <tr><td>Low-Compilation-Cost Register Allocation in LLVM-Based Binary Translation</td></tr>
+                <tr><td>Everything You Need to Know About Virtual Machine Live Migration Between Heterogeneous Processors</td></tr>
+                <tr><td>Squeezy: Rapid VM Memory Reclamation for Serverless Functions</td></tr>
+
+                <!-- Break -->
+                <tr class="break-row">
+                  <td colspan="2">15:18 &ndash; 15:42 &nbsp; Break</td>
+                </tr>
+
+                <!-- 3:42-5:30 Multi-Track -->
+                <tr>
+                  <td colspan="2" class="track-header">15:42 &ndash; 17:30 &nbsp; Multi-Track</td>
+                </tr>
+                <!-- Track A -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track A<br>ML Model Optimization: Compilers, Quantization &amp; Fine-Tuning</td>
+                  <td>LoRAFusion: Efficient LoRA Fine-Tuning for LLMs</td>
+                </tr>
+                <tr><td>LLMFolder: Revisiting Constant Folding in Large Language Models</td></tr>
+                <tr><td>No More Translation at Runtime: LLM-Empowered Static Binary Translation</td></tr>
+                <tr><td>FlexiQ: Adaptive Mixed-Precision Quantization for Latency/Accuracy Trade-Offs in Deep Neural Networks</td></tr>
+                <tr><td>FlashPS: Efficient Generative Image Editing with Mask-aware Caching and Scheduling</td></tr>
+                <tr><td>Automated End-to-End Model Serving with Cooperative Compilation and Scheduling</td></tr>
+
+                <!-- Track B -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track B<br>Edge Computing, IoT &amp; Embedded AI</td>
+                  <td>On-device Semantic Selection Made Low Latency and Memory Efficient with Monolithic Forwarding</td>
+                </tr>
+                <tr><td>Turnstile: Hybrid Information Flow Control Framework for Managing Privacy in Internet-of-Things Applications</td></tr>
+                <tr><td>Efficient ML Model Updates for Deeply Embedded Microcontrollers</td></tr>
+                <tr><td>Carbon-Aware Continuous Learning for Sustainable Real-Time Machine Learning Analytics</td></tr>
+                <tr><td>E-Cube: Event Enhanced Efficient Video Streaming for Drones</td></tr>
+                <tr><td>Neuro-C: Neural Inference Shaped by Hardware Limits</td></tr>
+
+                <!-- Track C -->
+                <tr>
+                  <td rowspan="6" class="session-cell">Track C<br>GPU Systems, Graph Computing &amp; Applied ML</td>
+                  <td>Bridging the GPU Utilization Gap: Predictive Multi-Dimensional Resource Scheduling for AI Workloads</td>
+                </tr>
+                <tr><td>Untangling GPU Power Consumption: Job-Level Inference in Cloud Shared Settings</td></tr>
+                <tr><td>PointShuffler: Accelerating Point Cloud Neural Networks on General-Purpose GPUs</td></tr>
+                <tr><td>FlexiWalker: Extensible GPU Framework for Efficient Dynamic Random Walks with Runtime Adaptation</td></tr>
+                <tr><td>Gopher: Efficient Dynamic Graph Pattern Mining via DAG-Driven Execution</td></tr>
+                <tr><td>Maya: Optimizing Deep Learning Training Workloads using GPU Runtime Emulation</td></tr>
+              </tbody>
+            </table>
           </div>
 
-          <p style="margin-top: 20px;"><em>Note: Detailed session information will be announced closer to the conference date.</em></p>
+          <p style="margin-top: 20px;"><em>Note: This is a preliminary program. Detailed session information including authors and session chairs will be announced closer to the conference date.</em></p>
         </div>
       </div>
     </div>
