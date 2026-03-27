@@ -107,6 +107,49 @@
       font-size: 14px;
       text-align: center;
     }
+
+    /* Multi-track parallel layout */
+    .multi-track-container {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    .multi-track-time {
+      background-color: #444;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      padding: 8px 14px;
+      border: 1px solid #ccc;
+    }
+    table.track-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    table.track-table th {
+      background-color: #aed8f0;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 8px;
+      border: 1px solid #ccc;
+      vertical-align: middle;
+    }
+    table.track-table td {
+      padding: 6px 10px;
+      font-size: 13px;
+      line-height: 1.4;
+      vertical-align: top;
+      border: 1px solid #ccc;
+    }
+    table.track-table tbody tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+    table.track-table tbody tr:nth-child(even) {
+      background-color: #e9e9e9;
+    }
   </style>
 
 </head>
@@ -152,16 +195,12 @@
                 <col style="width:75%">
               </colgroup>
               <tbody>
-                <!-- Registration -->
                 <tr class="reg-row">
                   <td colspan="2">7:30 &ndash; 8:30 &nbsp; Registration / Cafe</td>
                 </tr>
-                <!-- Opening -->
                 <tr class="opening-row">
                   <td colspan="2">8:30 &ndash; 8:45 &nbsp; Opening</td>
                 </tr>
-
-                <!-- OS & Virtualization -->
                 <tr>
                   <td rowspan="5" class="session-cell">8:45 &ndash; 10:15<br>OS &amp; Virtualization</td>
                   <td>RaidenSwap: A Multi-Swap Remote System for Multi-core Applications</td>
@@ -170,13 +209,9 @@
                 <tr><td>Proteus: Heterogeneous FPGA Virtualization</td></tr>
                 <tr><td>TierScape: Harnessing Multiple Compressed Tiers to Tame Server Memory TCO</td></tr>
                 <tr><td>PaCaR: Improved Buffered I/O Locality on NUMA Systems with Page Cache Replication</td></tr>
-
-                <!-- Break -->
                 <tr class="break-row">
                   <td colspan="2">10:15 &ndash; 10:45 &nbsp; Break</td>
                 </tr>
-
-                <!-- File Systems & Storage -->
                 <tr>
                   <td rowspan="5" class="session-cell">10:45 &ndash; 12:15<br>File Systems &amp; Storage</td>
                   <td>TCO-driven Storage Provisioning for Exascale Data Centers</td>
@@ -185,99 +220,119 @@
                 <tr><td>A Logically Disaggregated Cache for Replicated Storage Systems</td></tr>
                 <tr><td>ASIC-based Compression Accelerators for Storage Systems: Design, Placement, and Profiling Insights</td></tr>
                 <tr><td>SwitchFS: Asynchronous Metadata Updates for Distributed Filesystems with In-Network Coordination</td></tr>
-
-                <!-- Lunch -->
                 <tr class="break-row">
                   <td colspan="2">12:15 &ndash; 13:30 &nbsp; Lunch</td>
                 </tr>
+              </tbody>
+            </table>
 
-                <!-- 1:30-3:18 Multi-Track -->
-                <!-- Track A -->
+            <!-- 13:30-15:18 Multi-Track Parallel -->
+            <div class="multi-track-time">13:30 &ndash; 15:18 &nbsp; Multi-Track</div>
+            <table class="track-table">
+              <thead>
                 <tr>
-                  <td colspan="2" class="track-header">13:30 &ndash; 15:18 &nbsp; Multi-Track</td>
+                  <th>Track A &mdash; LLM Training at Scale</th>
+                  <th>Track B &mdash; Datacenter Network Fabrics &amp; RDMA</th>
+                  <th>Track C &mdash; Cloud &amp; Serverless Resource Management</th>
                 </tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <td rowspan="6" class="session-cell">Track A<br>LLM Training at Scale</td>
                   <td>MegaScale-Data: Scaling DataLoader for Multisource Large Foundation Model Training</td>
-                </tr>
-                <tr><td>MegaScale-MoE: Large-Scale Communication-Efficient Training of Mixture-of-Experts Models in Production</td></tr>
-                <tr><td>MegaScale-Omni: A Hyper-Scale, Workload-Resilient System for MultiModal LLM Training in Production</td></tr>
-                <tr><td>HetAuto: Cross-Cluster Auto-Parallelism for Heterogeneous Distributed Training</td></tr>
-                <tr><td>HARP: Orchestrating Automated Parallel Training on Heterogeneous GPU Clusters</td></tr>
-                <tr><td>Suika: Efficient and High-quality Re-scheduling of 3D-parallelized LLM Training Jobs in Shared Clusters</td></tr>
-
-                <!-- Track B -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track B<br>Datacenter Network Fabrics &amp; RDMA</td>
                   <td>REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation</td>
-                </tr>
-                <tr><td>LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks</td></tr>
-                <tr><td>SmartNS: Enabling Line-rate and Flexible Network Stack with SmartNIC</td></tr>
-                <tr><td>RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs</td></tr>
-                <tr><td>Practical and Scalable RDMA Connection Sharing for HPC Workload</td></tr>
-                <tr><td>Not A DPU in Name Only! Unleashing RDMA-capable DPUs in Multi-Tenant Serverless Clouds with NADINO</td></tr>
-
-                <!-- Track C -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track C<br>Cloud &amp; Serverless Resource Management</td>
                   <td>iRoute: Local Routing Table-based Workflow Management in Serverless Computing</td>
                 </tr>
-                <tr><td>Efficient Data Passing for Serverless Inference Workflows: A GPU-Centric Approach</td></tr>
-                <tr><td>Serverless Replication of Object Storage across Multi-Vendor Clouds and Regions</td></tr>
-                <tr><td>MTTM: Dynamic Fast Memory Partitioning with Bandwidth Optimization for Multi-tenant Cloud</td></tr>
-                <tr><td>Demystifying Serverless Costs on Public Platforms: Bridging Billing, Architecture, and OS Scheduling</td></tr>
-                <tr><td>In-Production Characterization of an Open Source Serverless Platform and New Scaling Strategies</td></tr>
+                <tr>
+                  <td>MegaScale-MoE: Large-Scale Communication-Efficient Training of Mixture-of-Experts Models in Production</td>
+                  <td>LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks</td>
+                  <td>Efficient Data Passing for Serverless Inference Workflows: A GPU-Centric Approach</td>
+                </tr>
+                <tr>
+                  <td>MegaScale-Omni: A Hyper-Scale, Workload-Resilient System for MultiModal LLM Training in Production</td>
+                  <td>SmartNS: Enabling Line-rate and Flexible Network Stack with SmartNIC</td>
+                  <td>Serverless Replication of Object Storage across Multi-Vendor Clouds and Regions</td>
+                </tr>
+                <tr>
+                  <td>HetAuto: Cross-Cluster Auto-Parallelism for Heterogeneous Distributed Training</td>
+                  <td>RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs</td>
+                  <td>MTTM: Dynamic Fast Memory Partitioning with Bandwidth Optimization for Multi-tenant Cloud</td>
+                </tr>
+                <tr>
+                  <td>HARP: Orchestrating Automated Parallel Training on Heterogeneous GPU Clusters</td>
+                  <td>Practical and Scalable RDMA Connection Sharing for HPC Workload</td>
+                  <td>Demystifying Serverless Costs on Public Platforms: Bridging Billing, Architecture, and OS Scheduling</td>
+                </tr>
+                <tr>
+                  <td>Suika: Efficient and High-quality Re-scheduling of 3D-parallelized LLM Training Jobs in Shared Clusters</td>
+                  <td>Not A DPU in Name Only! Unleashing RDMA-capable DPUs in Multi-Tenant Serverless Clouds with NADINO</td>
+                  <td>In-Production Characterization of an Open Source Serverless Platform and New Scaling Strategies</td>
+                </tr>
+              </tbody>
+            </table>
 
-                <!-- Break -->
+            <table class="prog">
+              <colgroup>
+                <col style="width:25%">
+                <col style="width:75%">
+              </colgroup>
+              <tbody>
                 <tr class="break-row">
                   <td colspan="2">15:18 &ndash; 15:42 &nbsp; Break</td>
                 </tr>
+              </tbody>
+            </table>
 
-                <!-- 3:42-5:30 Multi-Track -->
+            <!-- 15:42-17:30 Multi-Track Parallel -->
+            <div class="multi-track-time">15:42 &ndash; 17:30 &nbsp; Multi-Track</div>
+            <table class="track-table">
+              <thead>
                 <tr>
-                  <td colspan="2" class="track-header">15:42 &ndash; 17:30 &nbsp; Multi-Track</td>
+                  <th>Track A &mdash; On-Device &amp; Federated Learning</th>
+                  <th>Track B &mdash; Distributed Consensus, Blockchain &amp; Storage</th>
+                  <th>Track C &mdash; Fault Tolerance, Reliability &amp; Debugging</th>
                 </tr>
-                <!-- Track A -->
+              </thead>
+              <tbody>
                 <tr>
-                  <td rowspan="6" class="session-cell">Track A<br>On-Device &amp; Federated Learning</td>
                   <td>Federated Fine-Tuning of Sparsely-Activated Large Language Models on Resource-Constrained Devices</td>
-                </tr>
-                <tr><td>TailorLLM: Collaborative End-Cloud Inference of Large and Small Language Models Based on Low-Rank Adaptation</td></tr>
-                <tr><td>SwiftFL: Enabling Speculative Training for On-Device Federated Deep Learning</td></tr>
-                <tr><td>viNPU: Optimizing Vision Transformer Inference on Mobile NPUs</td></tr>
-                <tr><td>AIMS: A Cost-Efficient Framework for LLM-based Agent Deployment in Cloud-Edge Hybrid Environments</td></tr>
-                <tr><td>Scaling LLM Test-Time Compute with Mobile NPU on Smartphones</td></tr>
-
-                <!-- Track B -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track B<br>Distributed Consensus, Blockchain &amp; Storage</td>
                   <td>Ethane: Debloating State Data using Compact Trie for Account-based Blockchain</td>
-                </tr>
-                <tr><td>Scalable RDMA-accelerated Distributed Locks with Shared Stream Abstraction</td></tr>
-                <tr><td>OptiLog: Assigning Roles in Byzantine Consensus</td></tr>
-                <tr><td>FicusDB: Scalable Multi-Versioned Authenticated Storage</td></tr>
-                <tr><td>Towards Improving Throughput and Scalability of DAG-based BFT SMR</td></tr>
-                <tr><td>ECCB: Boosting Block Propagation of Blockchain with Erasure-Coded Compact Block</td></tr>
-
-                <!-- Track C -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track C<br>Fault Tolerance, Reliability &amp; Debugging</td>
                   <td>A Case for Elastic Quantum Error Correction Decoders</td>
                 </tr>
-                <tr><td>Accurate and Ultra-Fast Launch-Time Validation of Idempotency for GPU Kernels</td></tr>
-                <tr><td>Fast and Parallelized Crash Consistency with Opportunistic Order Elimination</td></tr>
-                <tr><td>Proactive Change Risk Detection in Production Cloud Systems: ByteDance's Experience</td></tr>
-                <tr><td>Rose: Reproducing External-Fault-Induced Failures in Distributed Systems with Lightweight Instrumentation</td></tr>
-                <tr><td>Garen: Reliable Cluster Management with Atomic State Reconciliation</td></tr>
-
-                <!-- General Assembly -->
-                <tr class="opening-row">
-                  <td colspan="2">17:30 &ndash; 18:15 &nbsp; General Assembly</td>
+                <tr>
+                  <td>TailorLLM: Collaborative End-Cloud Inference of Large and Small Language Models Based on Low-Rank Adaptation</td>
+                  <td>Scalable RDMA-accelerated Distributed Locks with Shared Stream Abstraction</td>
+                  <td>Accurate and Ultra-Fast Launch-Time Validation of Idempotency for GPU Kernels</td>
                 </tr>
+                <tr>
+                  <td>SwiftFL: Enabling Speculative Training for On-Device Federated Deep Learning</td>
+                  <td>OptiLog: Assigning Roles in Byzantine Consensus</td>
+                  <td>Fast and Parallelized Crash Consistency with Opportunistic Order Elimination</td>
+                </tr>
+                <tr>
+                  <td>viNPU: Optimizing Vision Transformer Inference on Mobile NPUs</td>
+                  <td>FicusDB: Scalable Multi-Versioned Authenticated Storage</td>
+                  <td>Proactive Change Risk Detection in Production Cloud Systems: ByteDance's Experience</td>
+                </tr>
+                <tr>
+                  <td>AIMS: A Cost-Efficient Framework for LLM-based Agent Deployment in Cloud-Edge Hybrid Environments</td>
+                  <td>Towards Improving Throughput and Scalability of DAG-based BFT SMR</td>
+                  <td>Rose: Reproducing External-Fault-Induced Failures in Distributed Systems with Lightweight Instrumentation</td>
+                </tr>
+                <tr>
+                  <td>Scaling LLM Test-Time Compute with Mobile NPU on Smartphones</td>
+                  <td>ECCB: Boosting Block Propagation of Blockchain with Erasure-Coded Compact Block</td>
+                  <td>Garen: Reliable Cluster Management with Atomic State Reconciliation</td>
+                </tr>
+              </tbody>
+            </table>
 
-                <!-- Banquet -->
+            <table class="prog">
+              <tbody>
+                <tr class="opening-row">
+                  <td>17:30 &ndash; 18:15 &nbsp; General Assembly</td>
+                </tr>
                 <tr class="event-row">
-                  <td colspan="2">18:15 &ndash; 19:30 &nbsp; Banquet (NMS)</td>
+                  <td>18:15 &ndash; 19:30 &nbsp; Banquet (NMS)</td>
                 </tr>
               </tbody>
             </table>
@@ -295,12 +350,9 @@
                 <col style="width:75%">
               </colgroup>
               <tbody>
-                <!-- Registration -->
                 <tr class="reg-row">
                   <td colspan="2">8:15 &ndash; 8:45 &nbsp; Registration / Cafe</td>
                 </tr>
-
-                <!-- AI -->
                 <tr>
                   <td rowspan="5" class="session-cell">8:45 &ndash; 10:15<br>AI</td>
                   <td>STAlloc: Enhancing Memory Efficiency in Large-Scale Model Training with Spatio-Temporal Planning</td>
@@ -309,13 +361,9 @@
                 <tr><td>AdaServe: Accelerating Multi-SLO LLM Serving with SLO-Customized Speculative Decoding</td></tr>
                 <tr><td>TAO: Tolerance-Aware Optimistic Verification for Floating-Point Neural Networks</td></tr>
                 <tr><td>Arena: Efficiently Training Large Models via Dynamic Scheduling and Adaptive Parallelism Co-Design</td></tr>
-
-                <!-- Break -->
                 <tr class="break-row">
                   <td colspan="2">10:15 &ndash; 10:45 &nbsp; Break</td>
                 </tr>
-
-                <!-- Security -->
                 <tr>
                   <td rowspan="5" class="session-cell">10:45 &ndash; 12:15<br>Security</td>
                   <td>CSnake: Detecting Self-Sustaining Cascading Failure via Causal Stitching of Fault Propagations</td>
@@ -324,94 +372,112 @@
                 <tr><td>Fuzzing Enterprise-Grade Blockchain Systems: Industrial Practice and Solutions</td></tr>
                 <tr><td>Avicenna: Masking Slowdowns in Replicated State Machines with Counterfactual Evaluation</td></tr>
                 <tr><td>Concord: Learning Network Configuration Contracts</td></tr>
-
-                <!-- Lunch -->
                 <tr class="break-row">
                   <td colspan="2">12:15 &ndash; 13:30 &nbsp; Lunch</td>
                 </tr>
+              </tbody>
+            </table>
 
-                <!-- 1:30-3:18 Multi-Track -->
+            <!-- 13:30-15:18 Multi-Track Parallel -->
+            <div class="multi-track-time">13:30 &ndash; 15:18 &nbsp; Multi-Track</div>
+            <table class="track-table">
+              <thead>
                 <tr>
-                  <td colspan="2" class="track-header">13:30 &ndash; 15:18 &nbsp; Multi-Track</td>
+                  <th>Track A &mdash; LLM Inference</th>
+                  <th>Track B &mdash; Traffic Engineering, CDNs &amp; Congestion Control</th>
+                  <th>Track C &mdash; Storage Systems</th>
                 </tr>
-                <!-- Track A -->
+              </thead>
+              <tbody>
                 <tr>
-                  <td rowspan="6" class="session-cell">Track A<br>LLM Inference</td>
                   <td>High Throughput and Low Latency LLM Serving via Adaptive KV Caching</td>
-                </tr>
-                <tr><td>FlexPipe: Adapting Dynamic LLM Serving Through Inflight Pipeline Refactoring in Fragmented Serverless Clusters</td></tr>
-                <tr><td>Taming Latency-Memory Trade-Off in MoE-Based LLM Serving via Fine-Grained Expert Offloading</td></tr>
-                <tr><td>PARD: Enhancing Goodput for Inference Pipeline via Proactive Request Dropping</td></tr>
-                <tr><td>TokenFlow: Responsive LLM Text Streaming Serving under Request Burst via Preemptive Scheduling</td></tr>
-                <tr><td>KUNSERVE: Parameter-centric Memory Management for Efficient Memory Overloading Handling in LLM Serving</td></tr>
-
-                <!-- Track B -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track B<br>Traffic Engineering, CDNs &amp; Congestion Control</td>
                   <td>Learn-to-Probe: Achieving Signal Distinguishability in Learning-based Congestion Control</td>
-                </tr>
-                <tr><td>Mitigating CDN Cache Misses with Scheduling: An Origin Shield for Billion-QPS Social Platforms</td></tr>
-                <tr><td>EMVOD: Elastic Multi-Path QUIC Scheduling for CDN Video-on-Demand Service</td></tr>
-                <tr><td>ECOTE: Priority-Aware Optical Restoration for WAN Traffic Engineering</td></tr>
-                <tr><td>RLive: Robust Delivery System for Scaling Live Streaming Services</td></tr>
-                <tr><td>Canopy: Property-Driven Learning for Congestion Control</td></tr>
-
-                <!-- Track C -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track C<br>Storage Systems</td>
                   <td>Once Rolling Hashing is Enough: Exploiting Rolling Hash Reuse in Delta Compression</td>
                 </tr>
-                <tr><td>Scheduling Cloud Block Storage Proactively and Reactively with Omar</td></tr>
-                <tr><td>PASS: A Power Adaptive Storage Server</td></tr>
-                <tr><td>Million-Scale Text-to-Video Retrieval with Hyperdimensional Computing</td></tr>
-                <tr><td>ColdCode: Cold Data Encoding for Enhanced Reliability and Lifetime in 3D NAND Flash</td></tr>
-                <tr><td>2DIO: Configurable and Cache-Accurate Trace Generation for Storage Benchmarking</td></tr>
+                <tr>
+                  <td>FlexPipe: Adapting Dynamic LLM Serving Through Inflight Pipeline Refactoring in Fragmented Serverless Clusters</td>
+                  <td>Mitigating CDN Cache Misses with Scheduling: An Origin Shield for Billion-QPS Social Platforms</td>
+                  <td>Scheduling Cloud Block Storage Proactively and Reactively with Omar</td>
+                </tr>
+                <tr>
+                  <td>Taming Latency-Memory Trade-Off in MoE-Based LLM Serving via Fine-Grained Expert Offloading</td>
+                  <td>EMVOD: Elastic Multi-Path QUIC Scheduling for CDN Video-on-Demand Service</td>
+                  <td>PASS: A Power Adaptive Storage Server</td>
+                </tr>
+                <tr>
+                  <td>PARD: Enhancing Goodput for Inference Pipeline via Proactive Request Dropping</td>
+                  <td>ECOTE: Priority-Aware Optical Restoration for WAN Traffic Engineering</td>
+                  <td>Million-Scale Text-to-Video Retrieval with Hyperdimensional Computing</td>
+                </tr>
+                <tr>
+                  <td>TokenFlow: Responsive LLM Text Streaming Serving under Request Burst via Preemptive Scheduling</td>
+                  <td>RLive: Robust Delivery System for Scaling Live Streaming Services</td>
+                  <td>ColdCode: Cold Data Encoding for Enhanced Reliability and Lifetime in 3D NAND Flash</td>
+                </tr>
+                <tr>
+                  <td>KUNSERVE: Parameter-centric Memory Management for Efficient Memory Overloading Handling in LLM Serving</td>
+                  <td>Canopy: Property-Driven Learning for Congestion Control</td>
+                  <td>2DIO: Configurable and Cache-Accurate Trace Generation for Storage Benchmarking</td>
+                </tr>
+              </tbody>
+            </table>
 
-                <!-- Break -->
+            <table class="prog">
+              <tbody>
                 <tr class="break-row">
-                  <td colspan="2">15:18 &ndash; 15:42 &nbsp; Break</td>
+                  <td>15:18 &ndash; 15:42 &nbsp; Break</td>
                 </tr>
+              </tbody>
+            </table>
 
-                <!-- 3:42-5:30 Multi-Track -->
+            <!-- 15:42-17:30 Multi-Track Parallel -->
+            <div class="multi-track-time">15:42 &ndash; 17:30 &nbsp; Multi-Track</div>
+            <table class="track-table">
+              <thead>
                 <tr>
-                  <td colspan="2" class="track-header">15:42 &ndash; 17:30 &nbsp; Multi-Track</td>
+                  <th>Track A &mdash; LLM Serving &amp; Agents</th>
+                  <th>Track B &mdash; Security, Privacy &amp; Vulnerabilities</th>
+                  <th>Track C &mdash; Architecture, Accelerators &amp; Heterogeneous Computing</th>
                 </tr>
-                <!-- Track A -->
+              </thead>
+              <tbody>
                 <tr>
-                  <td rowspan="6" class="session-cell">Track A<br>LLM Serving &amp; Agents</td>
                   <td>From Imperative to Declarative: Towards LLM-friendly OS Interfaces for Boosted Computer-Use Agents</td>
-                </tr>
-                <tr><td>AdaGen: Workload-Adaptive Cluster Scheduler for Latency-Optimal LLM Inference Serving</td></tr>
-                <tr><td>SkyWalker: A Locality-Aware Cross-Region Load Balancer for LLM Inference</td></tr>
-                <tr><td>MFS: An Efficient Model Family Serving System for LLMs</td></tr>
-                <tr><td>Efficient Multimodal Serving via Module Multiplexing</td></tr>
-                <tr><td>PiLLM: Resource-Efficient LLM Inference Using Workload Prediction</td></tr>
-
-                <!-- Track B -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track B<br>Security, Privacy &amp; Vulnerabilities</td>
                   <td>Effective On-Hardware Fuzzing of Embedded Operating Systems</td>
-                </tr>
-                <tr><td>Digital Hole: Bypassing Commercial Audio DRM Solutions with DReaMcatcher</td></tr>
-                <tr><td>TrustWeave: Integrity Measurement and Attestation For Multi-Cloud LLMs</td></tr>
-                <tr><td>TZ-LLM: Protecting On-Device Large Language Models with Arm TrustZone</td></tr>
-                <tr><td>NecoFuzz: Effective Fuzzing of Nested Virtualization via Fuzz-Harness Virtual Machines</td></tr>
-                <tr><td>LifeFuzz: Lifecycle-Guided Fuzzing for Windows Driver Cross-Handler Vulnerabilities</td></tr>
-
-                <!-- Track C -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track C<br>Architecture, Accelerators &amp; Heterogentic Computing</td>
                   <td>Chimera: Transparent and High-Performance ISAX Heterogeneous Computing via Binary Rewriting</td>
                 </tr>
-                <tr><td>Reducing the GPU Memory Bottleneck with Lossless Compression for ML</td></tr>
-                <tr><td>swKokkos: An Athread Backend for Enhanced Kokkos with the Sunway Heterogeneous Architecture</td></tr>
-                <tr><td>Accelerating Transactional Execution via Processing-In-Memory</td></tr>
-                <tr><td>Matrix-PIC: Harnessing Matrix Outer-product for High-Performance Particle-in-Cell Simulations</td></tr>
-                <tr><td>CHARM: Chiplet Heterogeneity-Aware Runtime Mapping System</td></tr>
+                <tr>
+                  <td>AdaGen: Workload-Adaptive Cluster Scheduler for Latency-Optimal LLM Inference Serving</td>
+                  <td>Digital Hole: Bypassing Commercial Audio DRM Solutions with DReaMcatcher</td>
+                  <td>Reducing the GPU Memory Bottleneck with Lossless Compression for ML</td>
+                </tr>
+                <tr>
+                  <td>SkyWalker: A Locality-Aware Cross-Region Load Balancer for LLM Inference</td>
+                  <td>TrustWeave: Integrity Measurement and Attestation For Multi-Cloud LLMs</td>
+                  <td>swKokkos: An Athread Backend for Enhanced Kokkos with the Sunway Heterogeneous Architecture</td>
+                </tr>
+                <tr>
+                  <td>MFS: An Efficient Model Family Serving System for LLMs</td>
+                  <td>TZ-LLM: Protecting On-Device Large Language Models with Arm TrustZone</td>
+                  <td>Accelerating Transactional Execution via Processing-In-Memory</td>
+                </tr>
+                <tr>
+                  <td>Efficient Multimodal Serving via Module Multiplexing</td>
+                  <td>NecoFuzz: Effective Fuzzing of Nested Virtualization via Fuzz-Harness Virtual Machines</td>
+                  <td>Matrix-PIC: Harnessing Matrix Outer-product for High-Performance Particle-in-Cell Simulations</td>
+                </tr>
+                <tr>
+                  <td>PiLLM: Resource-Efficient LLM Inference Using Workload Prediction</td>
+                  <td>LifeFuzz: Lifecycle-Guided Fuzzing for Windows Driver Cross-Handler Vulnerabilities</td>
+                  <td>CHARM: Chiplet Heterogeneity-Aware Runtime Mapping System</td>
+                </tr>
+              </tbody>
+            </table>
 
-                <!-- Posters -->
+            <table class="prog">
+              <tbody>
                 <tr class="event-row">
-                  <td colspan="2">17:30 &ndash; 19:30 &nbsp; Posters Reception</td>
+                  <td>17:30 &ndash; 19:30 &nbsp; Posters Reception</td>
                 </tr>
               </tbody>
             </table>
@@ -429,12 +495,9 @@
                 <col style="width:75%">
               </colgroup>
               <tbody>
-                <!-- Registration -->
                 <tr class="reg-row">
                   <td colspan="2">8:15 &ndash; 8:45 &nbsp; Registration / Cafe</td>
                 </tr>
-
-                <!-- Cloud -->
                 <tr>
                   <td rowspan="5" class="session-cell">8:45 &ndash; 10:15<br>Cloud</td>
                   <td>Prediction-Informed Power Management for General-Purpose Compute Servers</td>
@@ -443,13 +506,9 @@
                 <tr><td>DROPS: Managing Serverless Resource Pools in Microsoft Azure Functions</td></tr>
                 <tr><td>SKernel: An Elastic and Efficient Secure Container System at Scale with a Split-Kernel Architecture</td></tr>
                 <tr><td>Fix: externalizing network I/O in serverless computing</td></tr>
-
-                <!-- Break -->
                 <tr class="break-row">
                   <td colspan="2">10:15 &ndash; 10:45 &nbsp; Break</td>
                 </tr>
-
-                <!-- Distributed Systems -->
                 <tr>
                   <td rowspan="5" class="session-cell">10:45 &ndash; 12:15<br>Distributed Systems</td>
                   <td>Yield Not Thy Core</td>
@@ -458,90 +517,105 @@
                 <tr><td>Enabling Packet Spraying over Commodity RNICs with In-Network Support</td></tr>
                 <tr><td>FUR: Fast and Unlimited Reads on Persistent Memory Transactions</td></tr>
                 <tr><td>Rearchitecting Programmable Networks For In-Network Computing: From Hardware To Language</td></tr>
-
-                <!-- Lunch -->
                 <tr class="break-row">
                   <td colspan="2">12:15 &ndash; 13:30 &nbsp; Lunch</td>
                 </tr>
+              </tbody>
+            </table>
 
-                <!-- 1:30-3:18 Multi-Track -->
+            <!-- 13:30-15:18 Multi-Track Parallel -->
+            <div class="multi-track-time">13:30 &ndash; 15:18 &nbsp; Multi-Track</div>
+            <table class="track-table">
+              <thead>
                 <tr>
-                  <td colspan="2" class="track-header">13:30 &ndash; 15:18 &nbsp; Multi-Track</td>
+                  <th>Track A &mdash; Distributed Training &amp; Collective Communication</th>
+                  <th>Track B &mdash; Programmable Networks, SmartNICs &amp; Accelerators</th>
+                  <th>Track C &mdash; Virtualization, Containers &amp; OS Specialization</th>
                 </tr>
-                <!-- Track A -->
+              </thead>
+              <tbody>
                 <tr>
-                  <td rowspan="6" class="session-cell">Track A<br>Distributed Training &amp; Collective Communication</td>
                   <td>Laminar: A Scalable Asynchronous RL Post-Training Framework</td>
-                </tr>
-                <tr><td>Multipath Collective Communication Beyond Scale-up Networks in GPU Clouds</td></tr>
-                <tr><td>Crimson: Collaborative Parameter Updates for Efficient Pipeline Training of Large Language Models</td></tr>
-                <tr><td>Zeppelin: Balancing Variable-length Workloads in Data Parallel Large Model Training</td></tr>
-                <tr><td>Efficient and Adaptable Overlapping for Computation and Communication via Signaling and Reordering</td></tr>
-                <tr><td>MinatoLoader: Accelerating Machine Learning Training Through Efficient Data Preprocessing</td></tr>
-
-                <!-- Track B -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track B<br>Programmable Networks, SmartNICs &amp; Accelerators</td>
                   <td>Handling Network Faults in Distributed AI Training: Failover is Now an Option</td>
-                </tr>
-                <tr><td>GeDES: GPU-Driven Discrete Event Network Simulator</td></tr>
-                <tr><td>PatternSketch: General and Runtime Reconfigurable Time-series Network Traffic Pattern Detection</td></tr>
-                <tr><td>LightDSA: Enabling Efficient DSA Through Hardware-Aware Transparent Optimization</td></tr>
-                <tr><td>NutCracker: A Compilation Framework for Hybrid DPU Architectures</td></tr>
-                <tr><td>BASK: Batch And SmartNIC-offloaded KSM</td></tr>
-
-                <!-- Track C -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track C<br>Virtualization, Containers &amp; OS Specialization</td>
                   <td>Practical and Efficient x86-64 Emulation on RISC-V</td>
                 </tr>
-                <tr><td>Pyramid: A Secure, Resource-Efficient, and Pluggable Kubernetes for Multi-Tenancy</td></tr>
-                <tr><td>Wayfinder: Automated Operating System Specialization</td></tr>
-                <tr><td>Low-Compilation-Cost Register Allocation in LLVM-Based Binary Translation</td></tr>
-                <tr><td>Everything You Need to Know About Virtual Machine Live Migration Between Heterogeneous Processors</td></tr>
-                <tr><td>Squeezy: Rapid VM Memory Reclamation for Serverless Functions</td></tr>
+                <tr>
+                  <td>Multipath Collective Communication Beyond Scale-up Networks in GPU Clouds</td>
+                  <td>GeDES: GPU-Driven Discrete Event Network Simulator</td>
+                  <td>Pyramid: A Secure, Resource-Efficient, and Pluggable Kubernetes for Multi-Tenancy</td>
+                </tr>
+                <tr>
+                  <td>Crimson: Collaborative Parameter Updates for Efficient Pipeline Training of Large Language Models</td>
+                  <td>PatternSketch: General and Runtime Reconfigurable Time-series Network Traffic Pattern Detection</td>
+                  <td>Wayfinder: Automated Operating System Specialization</td>
+                </tr>
+                <tr>
+                  <td>Zeppelin: Balancing Variable-length Workloads in Data Parallel Large Model Training</td>
+                  <td>LightDSA: Enabling Efficient DSA Through Hardware-Aware Transparent Optimization</td>
+                  <td>Low-Compilation-Cost Register Allocation in LLVM-Based Binary Translation</td>
+                </tr>
+                <tr>
+                  <td>Efficient and Adaptable Overlapping for Computation and Communication via Signaling and Reordering</td>
+                  <td>NutCracker: A Compilation Framework for Hybrid DPU Architectures</td>
+                  <td>Everything You Need to Know About Virtual Machine Live Migration Between Heterogeneous Processors</td>
+                </tr>
+                <tr>
+                  <td>MinatoLoader: Accelerating Machine Learning Training Through Efficient Data Preprocessing</td>
+                  <td>BASK: Batch And SmartNIC-offloaded KSM</td>
+                  <td>Squeezy: Rapid VM Memory Reclamation for Serverless Functions</td>
+                </tr>
+              </tbody>
+            </table>
 
-                <!-- Break -->
+            <table class="prog">
+              <tbody>
                 <tr class="break-row">
-                  <td colspan="2">15:18 &ndash; 15:42 &nbsp; Break</td>
+                  <td>15:18 &ndash; 15:42 &nbsp; Break</td>
                 </tr>
+              </tbody>
+            </table>
 
-                <!-- 3:42-5:30 Multi-Track -->
+            <!-- 15:42-17:30 Multi-Track Parallel -->
+            <div class="multi-track-time">15:42 &ndash; 17:30 &nbsp; Multi-Track</div>
+            <table class="track-table">
+              <thead>
                 <tr>
-                  <td colspan="2" class="track-header">15:42 &ndash; 17:30 &nbsp; Multi-Track</td>
+                  <th>Track A &mdash; ML Model Optimization: Compilers, Quantization &amp; Fine-Tuning</th>
+                  <th>Track B &mdash; Edge Computing, IoT &amp; Embedded AI</th>
+                  <th>Track C &mdash; GPU Systems, Graph Computing &amp; Applied ML</th>
                 </tr>
-                <!-- Track A -->
+              </thead>
+              <tbody>
                 <tr>
-                  <td rowspan="6" class="session-cell">Track A<br>ML Model Optimization: Compilers, Quantization &amp; Fine-Tuning</td>
                   <td>LoRAFusion: Efficient LoRA Fine-Tuning for LLMs</td>
-                </tr>
-                <tr><td>LLMFolder: Revisiting Constant Folding in Large Language Models</td></tr>
-                <tr><td>No More Translation at Runtime: LLM-Empowered Static Binary Translation</td></tr>
-                <tr><td>FlexiQ: Adaptive Mixed-Precision Quantization for Latency/Accuracy Trade-Offs in Deep Neural Networks</td></tr>
-                <tr><td>FlashPS: Efficient Generative Image Editing with Mask-aware Caching and Scheduling</td></tr>
-                <tr><td>Automated End-to-End Model Serving with Cooperative Compilation and Scheduling</td></tr>
-
-                <!-- Track B -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track B<br>Edge Computing, IoT &amp; Embedded AI</td>
                   <td>On-device Semantic Selection Made Low Latency and Memory Efficient with Monolithic Forwarding</td>
-                </tr>
-                <tr><td>Turnstile: Hybrid Information Flow Control Framework for Managing Privacy in Internet-of-Things Applications</td></tr>
-                <tr><td>Efficient ML Model Updates for Deeply Embedded Microcontrollers</td></tr>
-                <tr><td>Carbon-Aware Continuous Learning for Sustainable Real-Time Machine Learning Analytics</td></tr>
-                <tr><td>E-Cube: Event Enhanced Efficient Video Streaming for Drones</td></tr>
-                <tr><td>Neuro-C: Neural Inference Shaped by Hardware Limits</td></tr>
-
-                <!-- Track C -->
-                <tr>
-                  <td rowspan="6" class="session-cell">Track C<br>GPU Systems, Graph Computing &amp; Applied ML</td>
                   <td>Bridging the GPU Utilization Gap: Predictive Multi-Dimensional Resource Scheduling for AI Workloads</td>
                 </tr>
-                <tr><td>Untangling GPU Power Consumption: Job-Level Inference in Cloud Shared Settings</td></tr>
-                <tr><td>PointShuffler: Accelerating Point Cloud Neural Networks on General-Purpose GPUs</td></tr>
-                <tr><td>FlexiWalker: Extensible GPU Framework for Efficient Dynamic Random Walks with Runtime Adaptation</td></tr>
-                <tr><td>Gopher: Efficient Dynamic Graph Pattern Mining via DAG-Driven Execution</td></tr>
-                <tr><td>Maya: Optimizing Deep Learning Training Workloads using GPU Runtime Emulation</td></tr>
+                <tr>
+                  <td>LLMFolder: Revisiting Constant Folding in Large Language Models</td>
+                  <td>Turnstile: Hybrid Information Flow Control Framework for Managing Privacy in Internet-of-Things Applications</td>
+                  <td>Untangling GPU Power Consumption: Job-Level Inference in Cloud Shared Settings</td>
+                </tr>
+                <tr>
+                  <td>No More Translation at Runtime: LLM-Empowered Static Binary Translation</td>
+                  <td>Efficient ML Model Updates for Deeply Embedded Microcontrollers</td>
+                  <td>PointShuffler: Accelerating Point Cloud Neural Networks on General-Purpose GPUs</td>
+                </tr>
+                <tr>
+                  <td>FlexiQ: Adaptive Mixed-Precision Quantization for Latency/Accuracy Trade-Offs in Deep Neural Networks</td>
+                  <td>Carbon-Aware Continuous Learning for Sustainable Real-Time Machine Learning Analytics</td>
+                  <td>FlexiWalker: Extensible GPU Framework for Efficient Dynamic Random Walks with Runtime Adaptation</td>
+                </tr>
+                <tr>
+                  <td>FlashPS: Efficient Generative Image Editing with Mask-aware Caching and Scheduling</td>
+                  <td>E-Cube: Event Enhanced Efficient Video Streaming for Drones</td>
+                  <td>Gopher: Efficient Dynamic Graph Pattern Mining via DAG-Driven Execution</td>
+                </tr>
+                <tr>
+                  <td>Automated End-to-End Model Serving with Cooperative Compilation and Scheduling</td>
+                  <td>Neuro-C: Neural Inference Shaped by Hardware Limits</td>
+                  <td>Maya: Optimizing Deep Learning Training Workloads using GPU Runtime Emulation</td>
+                </tr>
               </tbody>
             </table>
           </div>
