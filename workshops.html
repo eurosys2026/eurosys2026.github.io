@@ -9,15 +9,96 @@
 
   <title>EuroSys 2026</title>
 
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-
-  <!-- Custom styles for this template -->
   <link href="css/agency.css" rel="stylesheet">
+
+  <style>
+    #workshops-prog .container { max-width: 1800px; }
+    .ws-scroll {
+      overflow-x: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    table.ws-parallel {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    table.ws-parallel th, table.ws-parallel td {
+      padding: 10px 6px;
+      font-size: 14px;
+      line-height: 1.3;
+      border: 1px solid #ccc;
+      text-align: center;
+      vertical-align: middle;
+      word-wrap: break-word;
+    }
+    table.ws-parallel thead th {
+      background-color: #aed8f0;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    table.ws-parallel thead th.time-col {
+      background-color: #444;
+      color: #fff;
+      width: 110px;
+    }
+    table.ws-parallel tbody td:first-child {
+      background-color: #444;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+    table.ws-parallel tbody tr.ws-session td {
+      background-color: #c8e6c9;
+    }
+    table.ws-parallel tbody tr.ws-session td:first-child {
+      background-color: #444;
+    }
+    table.ws-parallel tbody tr.ws-session td.ws-tutorial {
+      background-color: #ffcc80;
+    }
+    table.ws-parallel tbody tr.ws-break td {
+      background-color: #d5d5d5;
+      font-weight: 600;
+    }
+    table.ws-parallel tbody tr.ws-reg td {
+      background-color: #f5a623;
+      color: #fff;
+      font-weight: 600;
+    }
+    table.ws-parallel tbody tr.ws-reception td {
+      background-color: #b39ddb;
+      color: #fff;
+      font-weight: 600;
+    }
+    table.ws-parallel tbody td a {
+      color: #1a0dab;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    table.ws-parallel tbody td a:hover { text-decoration: underline; }
+    .ws-room-sub {
+      display: block;
+      font-size: 10px;
+      color: #666;
+      font-weight: 400;
+    }
+    .ws-legend {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    .ws-legend-chip {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      vertical-align: middle;
+      margin-right: 5px;
+      border: 1px solid #aaa;
+    }
+  </style>
 
 </head>
 
@@ -25,167 +106,123 @@
 
   <div id="nav-placeholder"></div>
 
-  <!-- Header -->
   <header class="masthead">
     <div class="container">
       <div class="intro-text">
-
         <div class="intro-heading">EuroSys 2026</div>
-
         <div class="intro-lead-in"><b>Edinburgh</b></div>
-
         <div class="intro-lead-in"> April 27th&mdash;30th, 2026 </div>
-
-                <div class="photo-credit"> Photo from <a href="https://unsplash.com/" target="_black">Unsplash</a></div>
+        <div class="photo-credit"> Photo from <a href="https://unsplash.com/" target="_black">Unsplash</a></div>
       </div>
     </div>
   </header>
 
-  <!-- Workshops -->
-  <section id="workshops">
+  <section id="workshops-prog">
     <div class="container">
       <div class="row">
-        <div class="col-12 text-justify">
-          <h2 class="section-heading">Workshops</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Duration</th>
-                        <th>Full Name</th>
-                        <th>Website</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>CHEOPS</strong></td>
-                        <td>Full</td>
-                        <td>6th Workshop on Challenges and Opportunities of Efficient and Performant Storage Systems (CHEOPS)</td>
-                        <td><a href="https://cheops-workshop.github.io/">https://cheops-workshop.github.io/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Doctoral Workshop</strong></td>
-                        <td>Full</td>
-                        <td>21th EuroSys Doctoral Workshop (EuroDW)</td>
-                        <td><a href="https://eurodw.github.io/">https://eurodw.github.io/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>EUROMLSyS</strong></td>
-                        <td>Full</td>
-                        <td>Sixth European Workshop on Machine Learning and Systems (EuroMLSys)</td>
-                        <td><a href="https://euromlsys.eu/">https://euromlsys.eu/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>EUROSec</strong></td>
-                        <td>Full</td>
-                        <td>19th European Workshop on Systems Security (EuroSec)</td>
-                        <td><a href="https://eurosec-workshop.github.io/">https://eurosec-workshop.github.io/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>GreenSys</strong></td>
-                        <td>Full</td>
-                        <td>2nd International Workshop on Systems and Methods for Sustainable Large-Scale AI (GreenSys)</td>
-                        <td><a href="https://greensys-org.github.io/workshop/">https://greensys-org.github.io/workshop/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>InSyDe</strong></td>
-                        <td>Full</td>
-                        <td>1st Workshop on Intelligent System Design (InSyDe)</td>
-                        <td><a href="https://sites.google.com/view/insyde-eurosys26">https://sites.google.com/view/insyde-eurosys26</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>OSCAR</strong></td>
-                        <td>Half</td>
-                        <td>Open Systems Challenges — Agenda and Roadmap (OSCAR)</td>
-                        <td><a href="https://eurosys-oscar.github.io/eurosys-oscar/">https://eurosys-oscar.github.io/eurosys-oscar/</a></td>
-                    </tr>               
-                    <tr>
-                        <td><strong>PAPOC</strong></td>
-                        <td>Full</td>
-                        <td>13th International Workshop on Principles and Practice of Consistency for Distributed Data (PaPoC)</td>
-                        <td><a href="https://papoc-workshop.github.io/2026/">https://papoc-workshop.github.io/2026/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>SESAME</strong></td>
-                        <td>Full</td>
-                        <td>4th Workshop on Serverless Systems, Applications and Methodologies (SESAME)</td>
-                        <td><a href="https://sesame26.github.io/">https://sesame26.github.io/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>SysTEX 2026</strong></td>
-                        <td>Full</td>
-                        <td>9th Workshop on System Software for Trusted Execution (SysTEX)</td>
-                        <td><a href="https://systex-workshop.github.io/2026/">https://systex-workshop.github.io/2026/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>TDIS</strong></td>
-                        <td>Half</td>
-                        <td>4th International Workshop on Testing Distributed Internet of Things Systems (TDIS)</td>
-                        <td><a href="https://tdis.gitlab.io/tdis26/">https://tdis.gitlab.io/tdis26/</a></td>
-                    </tr>
-                    <!-- <tr>
-                        <td><strong>Huawei</strong></td>
-                        <td>Half</td>
-                        <td>TBD</td>
-                        <td></td>
-                    </tr> -->
-                </tbody>
+        <div class="col-12">
+          <h2 class="section-heading">Workshops &amp; Tutorials</h2>
+          <h3>Monday, April 27th &mdash; Day 0 (Workshops)</h3>
+          <p class="ws-legend">
+            <span class="ws-legend-chip" style="background-color:#c8e6c9;"></span>Workshop
+            &nbsp;&nbsp;
+            <span class="ws-legend-chip" style="background-color:#ffcc80;"></span>Tutorial
+          </p>
+
+          <div>
+            <table class="ws-parallel">
+              <thead>
+                <tr>
+                  <th class="time-col">Time</th>
+                  <th>Tinto<span class="ws-room-sub">Level 0</span></th>
+                  <th>Moorfoot<span class="ws-room-sub">Level 0</span></th>
+                  <th>Kilsyth<span class="ws-room-sub">Level 0</span></th>
+                  <th>Carrick 1<span class="ws-room-sub">Level 1</span></th>
+                  <th>Carrick 2<span class="ws-room-sub">Level 1</span></th>
+                  <th>Carrick 3<span class="ws-room-sub">Level 1</span></th>
+                  <th>Harris 1<span class="ws-room-sub">Level 1</span></th>
+                  <th>Harris 2<span class="ws-room-sub">Level 1</span></th>
+                  <th>Ochil 1<span class="ws-room-sub">Level 1</span></th>
+                  <th>Ochil 2<span class="ws-room-sub">Level 1</span></th>
+                  <th>Ochil 3<span class="ws-room-sub">Level 1</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="ws-reg"><td colspan="12">8:00 &ndash; 9:00 &nbsp; Registration / Cafe</td></tr>
+                <tr class="ws-session">
+                  <td>9:00 &ndash; 10:30<br><small>First Morning</small></td>
+                  <td><a href="https://eurodw.github.io/">Doctoral (EuroDW)</a></td>
+                  <td class="ws-tutorial"><a href="https://sir-lab.github.io/Ecosystem/conference-activities/eurosys2026/tutorial/">SysAI Tutorial</a></td>
+                  <td><a href="https://euromlsys.eu/">EuroMLSys</a></td>
+                  <td><a href="https://papoc-workshop.github.io/2026/">PAPOC</a></td>
+                  <td><a href="https://greensys-org.github.io/workshop/">GreenSys</a></td>
+                  <td><a href="https://cheops-workshop.github.io/">CHEOPS</a></td>
+                  <td><a href="https://eurosec-workshop.github.io/">EuroSec</a></td>
+                  <td class="ws-tutorial"><a href="https://sites.bu.edu/casp/S2MPC/">S2MPC Tutorial</a></td>
+                  <td><a href="https://systex-workshop.github.io/2026/">SysTEX</a></td>
+                  <td><a href="https://sesame26.github.io/">Sesame</a></td>
+                  <td><a href="https://sites.google.com/view/insyde-eurosys26">InSyDe</a></td>
+                </tr>
+                <tr class="ws-break"><td colspan="12">10:30 &ndash; 11:00 &nbsp; Break</td></tr>
+                <tr class="ws-session">
+                  <td>11:00 &ndash; 12:30<br><small>Second Morning</small></td>
+                  <td><a href="https://eurodw.github.io/">Doctoral (EuroDW)</a></td>
+                  <td class="ws-tutorial"><a href="https://sir-lab.github.io/Ecosystem/conference-activities/eurosys2026/tutorial/">SysAI Tutorial</a></td>
+                  <td><a href="https://euromlsys.eu/">EuroMLSys</a></td>
+                  <td><a href="https://papoc-workshop.github.io/2026/">PAPOC</a></td>
+                  <td><a href="https://greensys-org.github.io/workshop/">GreenSys</a></td>
+                  <td><a href="https://cheops-workshop.github.io/">CHEOPS</a></td>
+                  <td><a href="https://eurosec-workshop.github.io/">EuroSec</a></td>
+                  <td class="ws-tutorial"><a href="https://sites.bu.edu/casp/S2MPC/">S2MPC Tutorial</a></td>
+                  <td><a href="https://systex-workshop.github.io/2026/">SysTEX</a></td>
+                  <td><a href="https://sesame26.github.io/">Sesame</a></td>
+                  <td><a href="https://sites.google.com/view/insyde-eurosys26">InSyDe</a></td>
+                </tr>
+                <tr class="ws-break"><td colspan="12">12:30 &ndash; 14:00 &nbsp; Lunch</td></tr>
+                <tr class="ws-session">
+                  <td>14:00 &ndash; 15:30<br><small>First Afternoon</small></td>
+                  <td><a href="https://eurodw.github.io/">Doctoral (EuroDW)</a></td>
+                  <td><a href="https://eurosys-oscar.github.io/eurosys-oscar/">OSCAR</a></td>
+                  <td><a href="https://euromlsys.eu/">EuroMLSys</a></td>
+                  <td><a href="https://papoc-workshop.github.io/2026/">PAPOC</a></td>
+                  <td><a href="https://greensys-org.github.io/workshop/">GreenSys</a></td>
+                  <td><a href="https://cheops-workshop.github.io/">CHEOPS</a></td>
+                  <td><a href="https://eurosec-workshop.github.io/">EuroSec</a></td>
+                  <td><a href="https://tdis.gitlab.io/tdis26/">TDIS</a></td>
+                  <td><a href="https://systex-workshop.github.io/2026/">SysTEX</a></td>
+                  <td><a href="https://sesame26.github.io/">Sesame</a></td>
+                  <td><a href="https://sites.google.com/view/insyde-eurosys26">InSyDe</a></td>
+                </tr>
+                <tr class="ws-break"><td colspan="12">15:30 &ndash; 16:00 &nbsp; Break</td></tr>
+                <tr class="ws-session">
+                  <td>16:00 &ndash; 17:30<br><small>Second Afternoon</small></td>
+                  <td><a href="https://eurodw.github.io/">Doctoral (EuroDW)</a></td>
+                  <td><a href="https://eurosys-oscar.github.io/eurosys-oscar/">OSCAR</a></td>
+                  <td><a href="https://euromlsys.eu/">EuroMLSys</a></td>
+                  <td><a href="https://papoc-workshop.github.io/2026/">PAPOC</a></td>
+                  <td><a href="https://greensys-org.github.io/workshop/">GreenSys</a></td>
+                  <td><a href="https://cheops-workshop.github.io/">CHEOPS</a></td>
+                  <td><a href="https://eurosec-workshop.github.io/">EuroSec</a></td>
+                  <td><a href="https://tdis.gitlab.io/tdis26/">TDIS</a></td>
+                  <td><a href="https://systex-workshop.github.io/2026/">SysTEX</a></td>
+                  <td><a href="https://sesame26.github.io/">Sesame</a></td>
+                  <td><a href="https://sites.google.com/view/insyde-eurosys26">InSyDe</a></td>
+                </tr>
+                <tr class="ws-reception"><td colspan="12">17:30 &ndash; 19:30 &nbsp; Welcome Reception</td></tr>
+              </tbody>
             </table>
+          </div>
 
-          <h2 class="section-heading">Tutorials</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Duration</th>
-                        <th>Full Name</th>
-                        <th>Website</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>SysAI</strong></td>
-                        <td>Half</td>
-                        <td>Tutorial on Systems in the Age of AI</td>
-                        <td><a href="https://sir-lab.github.io/Ecosystem/conference-activities/eurosys2026/tutorial/">https://sir-lab.github.io/Ecosystem/conference-activities/eurosys2026/tutorial/</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>S2MPC</strong></td>
-                        <td>Half</td>
-                        <td>Secure MPC from a Systems Perspective: A Hands-on Tutorial with ORQ (S2MPC)</td>
-                        <td><a href="https://sites.bu.edu/casp/S2MPC/">https://sites.bu.edu/casp/S2MPC/</a></td>
-                    </tr>
-                </tbody>
-            </table>
-         
-            <!-- <br/>
-            <hr>
-
-            <h2>Contact</h2>
-
-            For any further information, please contact the workshop chairs:
-            <ul>
-              <li><b>Thaleia Dimitra Doudali</b>
-                <ul>
-                  <li><a href="mailto:boris.grot@ed.ac.uk">Email</a></li>
-                  <li><a href="https://homepages.inf.ed.ac.uk/bgrot/">Website</a></li>
-                </ul>
-              </li>
-              <li><b>Christian Pinto</b>
-                <ul>
-                  <li><a href="linkedin.com/in/christian-pinto-462b2147">linkedin</a></li>
-                  <li><a href="https://research.ibm.com/people/christian-pinto">Website</a></li>
-                </ul>
-              </li>
-            </ul> -->
-            
+          <p style="margin-top: 30px;">All workshops and tutorials take place at the <a href="venues.html#venues">Edinburgh International Conference Centre (EICC)</a>. The floor plan below shows the locations of each room.</p>
+          <div style="text-align:center; margin: 20px 0;">
+            <img src="img/vanues.png" alt="EICC Venue Floor Plan" style="max-width: 100%; height: auto;">
+          </div>
 
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-light">
     <div class="container">
       <div class="row">
@@ -196,25 +233,13 @@
     </div>
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
   <script src="js/agency.min.js"></script>
-    
-  <!-- Custom scripts to pick random background image -->
   <script src="vendor/jquery/jquery.random-images.js"></script>
-
   <script>
-    $(function(){
-      $("#nav-placeholder").load("nav.html");
-    });
+    $(function(){ $("#nav-placeholder").load("nav.html"); });
   </script>
-
 </body>
-
 </html>
